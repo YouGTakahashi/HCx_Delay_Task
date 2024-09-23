@@ -12,7 +12,7 @@ Last_T = 10;
 include_free = 0; %1 = include free choice trials;
 
 %LOAD FILES
-for cell_count = 1:128; 				
+for cell_count = 1:289; 				
 %DE_Shm				
 if cell_count ==	1	load	sham_rat1_session1	; end
 if cell_count ==	2	load	sham_rat1_session2	; end
@@ -142,6 +142,169 @@ if cell_count ==	125	load	sham_rat5_session21	; end
 if cell_count ==	126	load	sham_rat5_session22	; end
 if cell_count ==	127	load	sham_rat5_session23	; end
 if cell_count ==	128	load	sham_rat5_session24	; end
+				
+%DE_HCx				
+if cell_count ==	129	load	HCx_rat1_session1	; end
+if cell_count ==	130	load	HCx_rat1_session2	; end
+if cell_count ==	131	load	HCx_rat1_session3	; end
+if cell_count ==	132	load	HCx_rat1_session4	; end
+if cell_count ==	133	load	HCx_rat1_session5	; end
+if cell_count ==	134	load	HCx_rat1_session6	; end
+if cell_count ==	135	load	HCx_rat1_session7	; end
+if cell_count ==	136	load	HCx_rat1_session8	; end
+if cell_count ==	137	load	HCx_rat1_session9	; end
+if cell_count ==	138	load	HCx_rat1_session10	; end
+if cell_count ==	139	load	HCx_rat1_session11	; end
+if cell_count ==	140	load	HCx_rat1_session12	; end
+if cell_count ==	141	load	HCx_rat1_session13	; end
+if cell_count ==	142	load	HCx_rat1_session14	; end
+if cell_count ==	143	load	HCx_rat1_session15	; end
+if cell_count ==	144	load	HCx_rat2_session1	; end
+if cell_count ==	145	load	HCx_rat2_session2	; end
+if cell_count ==	146	load	HCx_rat2_session3	; end
+if cell_count ==	147	load	HCx_rat2_session4	; end
+if cell_count ==	148	load	HCx_rat2_session5	; end
+if cell_count ==	149	load	HCx_rat2_session6	; end
+if cell_count ==	150	load	HCx_rat2_session7	; end
+if cell_count ==	151	load	HCx_rat2_session8	; end
+if cell_count ==	152	load	HCx_rat2_session9	; end
+if cell_count ==	153	load	HCx_rat2_session10	; end
+if cell_count ==	154	load	HCx_rat2_session11	; end
+if cell_count ==	155	load	HCx_rat3_session1	; end
+if cell_count ==	156	load	HCx_rat3_session2	; end
+if cell_count ==	157	load	HCx_rat3_session3	; end
+if cell_count ==	158	load	HCx_rat3_session4	; end
+if cell_count ==	159	load	HCx_rat3_session5	; end
+if cell_count ==	160	load	HCx_rat3_session6	; end
+if cell_count ==	161	load	HCx_rat3_session7	; end
+if cell_count ==	162	load	HCx_rat3_session8	; end
+if cell_count ==	163	load	HCx_rat3_session9	; end
+if cell_count ==	164	load	HCx_rat3_session10	; end
+if cell_count ==	165	load	HCx_rat3_session11	; end
+if cell_count ==	166	load	HCx_rat3_session12	; end
+if cell_count ==	167	load	HCx_rat3_session13	; end
+if cell_count ==	168	load	HCx_rat3_session14	; end
+if cell_count ==	169	load	HCx_rat3_session15	; end
+if cell_count ==	170	load	HCx_rat3_session16	; end
+if cell_count ==	171	load	HCx_rat3_session17	; end
+if cell_count ==	172	load	HCx_rat3_session18	; end
+if cell_count ==	173	load	HCx_rat4_session1	; end
+if cell_count ==	174	load	HCx_rat4_session2	; end
+if cell_count ==	175	load	HCx_rat4_session3	; end
+if cell_count ==	176	load	HCx_rat4_session4	; end
+if cell_count ==	177	load	HCx_rat4_session5	; end
+if cell_count ==	178	load	HCx_rat4_session6	; end
+if cell_count ==	179	load	HCx_rat4_session7	; end
+if cell_count ==	180	load	HCx_rat4_session8	; end
+if cell_count ==	181	load	HCx_rat4_session9	; end
+if cell_count ==	182	load	HCx_rat4_session10	; end
+if cell_count ==	183	load	HCx_rat4_session11	; end
+if cell_count ==	184	load	HCx_rat4_session12	; end
+if cell_count ==	185	load	HCx_rat4_session13	; end
+if cell_count ==	186	load	HCx_rat4_session14	; end
+if cell_count ==	187	load	HCx_rat4_session15	; end
+if cell_count ==	188	load	HCx_rat4_session16	; end
+if cell_count ==	189	load	HCx_rat4_session17	; end
+if cell_count ==	190	load	HCx_rat4_session18	; end
+if cell_count ==	191	load	HCx_rat4_session19	; end
+if cell_count ==	192	load	HCx_rat4_session20	; end
+if cell_count ==	193	load	HCx_rat5_session1	; end
+if cell_count ==	194	load	HCx_rat5_session2	; end
+if cell_count ==	195	load	HCx_rat5_session3	; end
+if cell_count ==	196	load	HCx_rat5_session4	; end
+if cell_count ==	197	load	HCx_rat5_session5	; end
+if cell_count ==	198	load	HCx_rat5_session6	; end
+if cell_count ==	199	load	HCx_rat5_session7	; end
+if cell_count ==	200	load	HCx_rat5_session8	; end
+if cell_count ==	201	load	HCx_rat5_session9	; end
+if cell_count ==	202	load	HCx_rat5_session10	; end
+if cell_count ==	203	load	HCx_rat5_session11	; end
+if cell_count ==	204	load	HCx_rat5_session12	; end
+if cell_count ==	205	load	HCx_rat5_session13	; end
+if cell_count ==	206	load	HCx_rat5_session14	; end
+if cell_count ==	207	load	HCx_rat6_session1	; end
+if cell_count ==	208	load	HCx_rat6_session2	; end
+if cell_count ==	209	load	HCx_rat6_session3	; end
+if cell_count ==	210	load	HCx_rat6_session4	; end
+if cell_count ==	211	load	HCx_rat6_session5	; end
+if cell_count ==	212	load	HCx_rat6_session6	; end
+if cell_count ==	213	load	HCx_rat6_session7	; end
+if cell_count ==	214	load	HCx_rat6_session8	; end
+if cell_count ==	215	load	HCx_rat6_session9	; end
+if cell_count ==	216	load	HCx_rat6_session10	; end
+if cell_count ==	217	load	HCx_rat6_session11	; end
+if cell_count ==	218	load	HCx_rat6_session12	; end
+if cell_count ==	219	load	HCx_rat6_session13	; end
+if cell_count ==	220	load	HCx_rat6_session14	; end
+if cell_count ==	221	load	HCx_rat6_session15	; end
+if cell_count ==	222	load	HCx_rat6_session16	; end
+if cell_count ==	223	load	HCx_rat6_session17	; end
+if cell_count ==	224	load	HCx_rat6_session18	; end
+if cell_count ==	225	load	HCx_rat6_session19	; end
+if cell_count ==	226	load	HCx_rat7_session1	; end
+if cell_count ==	227	load	HCx_rat7_session2	; end
+if cell_count ==	228	load	HCx_rat7_session3	; end
+if cell_count ==	229	load	HCx_rat7_session4	; end
+if cell_count ==	230	load	HCx_rat7_session5	; end
+if cell_count ==	231	load	HCx_rat7_session6	; end
+if cell_count ==	232	load	HCx_rat7_session7	; end
+if cell_count ==	233	load	HCx_rat7_session8	; end
+if cell_count ==	234	load	HCx_rat7_session9	; end
+if cell_count ==	235	load	HCx_rat7_session10	; end
+if cell_count ==	236	load	HCx_rat7_session11	; end
+if cell_count ==	237	load	HCx_rat7_session12	; end
+if cell_count ==	238	load	HCx_rat7_session13	; end
+if cell_count ==	239	load	HCx_rat7_session14	; end
+if cell_count ==	240	load	HCx_rat7_session15	; end
+if cell_count ==	241	load	HCx_rat7_session16	; end
+if cell_count ==	242	load	HCx_rat7_session17	; end
+if cell_count ==	243	load	HCx_rat7_session18	; end
+if cell_count ==	244	load	HCx_rat8_session1	; end
+if cell_count ==	245	load	HCx_rat8_session2	; end
+if cell_count ==	246	load	HCx_rat8_session3	; end
+if cell_count ==	247	load	HCx_rat8_session4	; end
+if cell_count ==	248	load	HCx_rat8_session5	; end
+if cell_count ==	249	load	HCx_rat8_session6	; end
+if cell_count ==	250	load	HCx_rat8_session7	; end
+if cell_count ==	251	load	HCx_rat8_session8	; end
+if cell_count ==	252	load	HCx_rat8_session9	; end
+if cell_count ==	253	load	HCx_rat8_session10	; end
+if cell_count ==	254	load	HCx_rat8_session11	; end
+if cell_count ==	255	load	HCx_rat8_session12	; end
+if cell_count ==	256	load	HCx_rat8_session13	; end
+if cell_count ==	257	load	HCx_rat8_session14	; end
+if cell_count ==	258	load	HCx_rat8_session15	; end
+if cell_count ==	259	load	HCx_rat8_session16	; end
+if cell_count ==	260	load	HCx_rat8_session17	; end
+if cell_count ==	261	load	HCx_rat8_session18	; end
+if cell_count ==	262	load	HCx_rat8_session19	; end
+if cell_count ==	263	load	HCx_rat8_session20	; end
+if cell_count ==	264	load	HCx_rat8_session21	; end
+if cell_count ==	265	load	HCx_rat8_session22	; end
+if cell_count ==	266	load	HCx_rat8_session23	; end
+if cell_count ==	267	load	HCx_rat8_session24	; end
+if cell_count ==	268	load	HCx_rat9_session1	; end
+if cell_count ==	269	load	HCx_rat9_session2	; end
+if cell_count ==	270	load	HCx_rat9_session3	; end
+if cell_count ==	271	load	HCx_rat9_session4	; end
+if cell_count ==	272	load	HCx_rat9_session5	; end
+if cell_count ==	273	load	HCx_rat9_session6	; end
+if cell_count ==	274	load	HCx_rat9_session7	; end
+if cell_count ==	275	load	HCx_rat9_session8	; end
+if cell_count ==	276	load	HCx_rat9_session9	; end
+if cell_count ==	277	load	HCx_rat9_session10	; end
+if cell_count ==	278	load	HCx_rat9_session11	; end
+if cell_count ==	279	load	HCx_rat9_session12	; end
+if cell_count ==	280	load	HCx_rat9_session13	; end
+if cell_count ==	281	load	HCx_rat9_session14	; end
+if cell_count ==	282	load	HCx_rat9_session15	; end
+if cell_count ==	283	load	HCx_rat9_session16	; end
+if cell_count ==	284	load	HCx_rat9_session17	; end
+if cell_count ==	285	load	HCx_rat9_session18	; end
+if cell_count ==	286	load	HCx_rat9_session19	; end
+if cell_count ==	287	load	HCx_rat9_session20	; end
+if cell_count ==	288	load	HCx_rat9_session21	; end
+if cell_count ==	289	load	HCx_rat9_session22	; end
 
 %CLEAR VARIABLES;
 clear all_trials FR_1st FR_2nd FR_1st_np FR_2nd_np  FR_1st_2;
@@ -594,3 +757,68 @@ RT_array = cat(2,mean(FR_H_L),mean(FR_L_L));
 cat_RT(cell_count,:) = cat(1,RT_array);
 
 end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%make figure for bar-graph; Extract Percent choice for Ctrl and HCx;
+Ctrl = cat_RT(1:128,:);
+HCx = cat_RT(129:289,:);
+
+%average and SEM;
+avg_Ctrl_H(1,1) = mean(Ctrl(:,1)); %high
+avg_Ctrl_L(1,1) = mean(Ctrl(:,2)); %low
+
+avg_HCx_H(1,1) = mean(HCx(:,1)); %high
+avg_HCx_L(1,1) = mean(HCx(:,2)); %low
+
+sem_Ctrl_H(1,1) = std(Ctrl(:,1))/sqrt(length(Ctrl(:,1)));
+sem_Ctrl_L(1,1) = std(Ctrl(:,2))/sqrt(length(Ctrl(:,2)));
+
+sem_HCx_H(1,1) = std(HCx(:,1))/sqrt(length(HCx(:,1)));
+sem_HCx_L(1,1) = std(HCx(:,2))/sqrt(length(HCx(:,2)));
+
+%for scatter plot;
+Ctrl_scat_H(1:length(Ctrl(:,1)),1) = rand(length(Ctrl(:,1)),1);
+for a = 1:length(Ctrl(:,1));
+    Ctrl_scat_H(a,1) = (Ctrl_scat_H(a,1)/10 - 0.05)+1;
+end
+Ctrl_scat_H(:,2) = Ctrl(:,1);
+
+Ctrl_scat_L(1:length(Ctrl(:,1)),1) = rand(length(Ctrl(:,1)),1);
+for a = 1:length(Ctrl(:,1));
+    Ctrl_scat_L(a,1) = (Ctrl_scat_L(a,1)/10 - 0.05)+2;
+end
+Ctrl_scat_L(:,2) = Ctrl(:,2);
+
+HCx_scat_H(1:length(HCx(:,1)),1) = rand(length(HCx(:,1)),1);
+for a = 1:length(HCx(:,1));
+    HCx_scat_H(a,1) = (HCx_scat_H(a,1)/10 - 0.05)+3.5;
+end
+HCx_scat_H(:,2) = HCx(:,1);
+
+HCx_scat_L(1:length(HCx(:,1)),1) = rand(length(HCx(:,1)),1);
+for a = 1:length(HCx(:,1));
+    HCx_scat_L(a,1) = (HCx_scat_L(a,1)/10 - 0.05)+4.5;
+end
+HCx_scat_L(:,2) = HCx(:,2);
+
+figure1 = figure;
+axes1 = axes('XTick',[1 2 3.5 4.5],'XTickLabel',{'H','L','H','L'},...
+  'YTick',[0 0.1 0.2 0.3 0.4],'Parent',figure1);
+hold(axes1,'all');
+
+bar(1,avg_Ctrl_H,'FaceColor',[0 0 0]); hold on;
+bar(2,avg_Ctrl_L,'FaceColor',[0 0 0]); hold on;
+bar(3.5,avg_HCx_H,'FaceColor',[.5 .5 .5]); hold on;
+bar(4.5,avg_HCx_L,'FaceColor',[.5 .5 .5]); hold on;
+
+errorbar(1,avg_Ctrl_H,sem_Ctrl_H,'Color',[0 0 0],'LineStyle','none');hold on;
+errorbar(2,avg_Ctrl_L,sem_Ctrl_L,'Color',[0 0 0],'LineStyle','none');hold on;
+errorbar(3.5,avg_HCx_H,sem_HCx_H,'Color',[0 0 0],'LineStyle','none');hold on;
+errorbar(4.5,avg_HCx_L,sem_HCx_L,'Color',[0 0 0],'LineStyle','none');hold on;
+
+scatter(Ctrl_scat_H(:,1),Ctrl_scat_H(:,2),'MarkerEdgeColor',[1 0 0]); hold on;
+scatter(Ctrl_scat_L(:,1),Ctrl_scat_L(:,2),'MarkerEdgeColor',[1 0 0]); hold on;
+scatter(HCx_scat_H(:,1),HCx_scat_H(:,2),'MarkerEdgeColor',[1 0 0]); hold on;
+scatter(HCx_scat_L(:,1),HCx_scat_L(:,2),'MarkerEdgeColor',[1 0 0]); hold on;
+
+box off;

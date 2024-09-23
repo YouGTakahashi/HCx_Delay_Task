@@ -2,14 +2,13 @@ close all
 clear all
 
 %PARAMETERS;
-Block1_last = 0 % 0 --> use all trials in block 1 for Last_T; otherwise put number of trials;
+Block1_last = 1% 0 --> use all trials in block 1 for Last_T; otherwise put number of trials;
 First_T = 5 %Number of first trials for blocks 2-4
 Last_T = 5 %Number of last trials for blocks 2-4
 
-
 %LOAD FILES
-for cell_count = 1:44; 				
-%DE_Shm				
+for cell_count = 1:110; 				
+%Ctrl				
 if cell_count ==	1	load	sham_DA_unit1	; end
 if cell_count ==	2	load	sham_DA_unit2	; end
 if cell_count ==	3	load	sham_DA_unit3	; end
@@ -54,6 +53,73 @@ if cell_count ==	41	load	sham_DA_unit41	; end
 if cell_count ==	42	load	sham_DA_unit42	; end
 if cell_count ==	43	load	sham_DA_unit43	; end
 if cell_count ==	44	load	sham_DA_unit44	; end
+%HCx				
+if cell_count ==	45	load	HCx_DA_unit1	; end
+if cell_count ==	46	load	HCx_DA_unit2	; end
+if cell_count ==	47	load	HCx_DA_unit3	; end
+if cell_count ==	48	load	HCx_DA_unit4	; end
+if cell_count ==	49	load	HCx_DA_unit5	; end
+if cell_count ==	50	load	HCx_DA_unit6	; end
+if cell_count ==	51	load	HCx_DA_unit7	; end
+if cell_count ==	52	load	HCx_DA_unit8	; end
+if cell_count ==	53	load	HCx_DA_unit9	; end
+if cell_count ==	54	load	HCx_DA_unit10	; end
+if cell_count ==	55	load	HCx_DA_unit11	; end
+if cell_count ==	56	load	HCx_DA_unit12	; end
+if cell_count ==	57	load	HCx_DA_unit13	; end
+if cell_count ==	58	load	HCx_DA_unit14	; end
+if cell_count ==	59	load	HCx_DA_unit15	; end
+if cell_count ==	60	load	HCx_DA_unit16	; end
+if cell_count ==	61	load	HCx_DA_unit17	; end
+if cell_count ==	62	load	HCx_DA_unit18	; end
+if cell_count ==	63	load	HCx_DA_unit19	; end
+if cell_count ==	64	load	HCx_DA_unit20	; end
+if cell_count ==	65	load	HCx_DA_unit21	; end
+if cell_count ==	66	load	HCx_DA_unit22	; end
+if cell_count ==	67	load	HCx_DA_unit23	; end
+if cell_count ==	68	load	HCx_DA_unit24	; end
+if cell_count ==	69	load	HCx_DA_unit25	; end
+if cell_count ==	70	load	HCx_DA_unit26	; end
+if cell_count ==	71	load	HCx_DA_unit27	; end
+if cell_count ==	72	load	HCx_DA_unit28	; end
+if cell_count ==	73	load	HCx_DA_unit29	; end
+if cell_count ==	74	load	HCx_DA_unit30	; end
+if cell_count ==	75	load	HCx_DA_unit31	; end
+if cell_count ==	76	load	HCx_DA_unit32	; end
+if cell_count ==	77	load	HCx_DA_unit33	; end
+if cell_count ==	78	load	HCx_DA_unit34	; end
+if cell_count ==	79	load	HCx_DA_unit35	; end
+if cell_count ==	80	load	HCx_DA_unit36	; end
+if cell_count ==	81	load	HCx_DA_unit37	; end
+if cell_count ==	82	load	HCx_DA_unit38	; end
+if cell_count ==	83	load	HCx_DA_unit39	; end
+if cell_count ==	84	load	HCx_DA_unit40	; end
+if cell_count ==	85	load	HCx_DA_unit41	; end
+if cell_count ==	86	load	HCx_DA_unit42	; end
+if cell_count ==	87	load	HCx_DA_unit43	; end
+if cell_count ==	88	load	HCx_DA_unit44	; end
+if cell_count ==	89	load	HCx_DA_unit45	; end
+if cell_count ==	90	load	HCx_DA_unit46	; end
+if cell_count ==	91	load	HCx_DA_unit47	; end
+if cell_count ==	92	load	HCx_DA_unit48	; end
+if cell_count ==	93	load	HCx_DA_unit49	; end
+if cell_count ==	94	load	HCx_DA_unit50	; end
+if cell_count ==	95	load	HCx_DA_unit51	; end
+if cell_count ==	96	load	HCx_DA_unit52	; end
+if cell_count ==	97	load	HCx_DA_unit53	; end
+if cell_count ==	98	load	HCx_DA_unit54	; end
+if cell_count ==	99	load	HCx_DA_unit55	; end
+if cell_count ==	100	load	HCx_DA_unit56	; end
+if cell_count ==	101	load	HCx_DA_unit57	; end
+if cell_count ==	102	load	HCx_DA_unit58	; end
+if cell_count ==	103	load	HCx_DA_unit59	; end
+if cell_count ==	104	load	HCx_DA_unit60	; end
+if cell_count ==	105	load	HCx_DA_unit61	; end
+if cell_count ==	106	load	HCx_DA_unit62	; end
+if cell_count ==	107	load	HCx_DA_unit63	; end
+if cell_count ==	108	load	HCx_DA_unit64	; end
+if cell_count ==	109	load	HCx_DA_unit65	; end
+if cell_count ==	110	load	HCx_DA_unit66	; end
 
 %CLEAR VARIABLES;
 clear all_trials FR_1st FR_2nd FR_1st_np FR_2nd_np  FR_1st_2;
@@ -459,6 +525,7 @@ end
 %column 2 = firing at 0.5 s
 %column 3 = firing at 1.0 s
 %column 4 = baseline firing
+%column 5 = baseline for dashed line;
 
 for a = 1:length(all_trials),
    if all_trials(a,18)>0;
@@ -469,14 +536,12 @@ for a = 1:length(all_trials),
        FR_1st(a,3) = (length(find(cell(:,1) <=(all_trials(a,21)+ 1.5) & cell(:,1) >=(all_trials(a,21)+ 1.0)))...
             /((all_trials(a,21)+ 1.5)-(all_trials(a,21)+ 1.0)));
        FR_1st(a,4) = length(find(cell(:,1) <=(all_trials(a,1)-0.5+0.4) & cell(:,1) >=(all_trials(a,1)-0.5)))/0.4;
+       FR_1st(a,5) = length(find(cell(:,1) <=(all_trials(a,1)-0.4+0.5) & cell(:,1) >=(all_trials(a,1)-0.4)))/0.5;
+           
    else
-       FR_1st(a,1:4) = -999;
+       FR_1st(a,1:5) = -999;
    end
 end
-
-FR_1st_norm(:,1) = FR_1st(:,1) - FR_1st(:,4);
-FR_1st_norm(:,2) = FR_1st(:,2) - FR_1st(:,4);
-FR_1st_norm(:,3) = FR_1st(:,3) - FR_1st(:,4);
     
 %EXTRACT EACH CONDITION;
 bk1_sh = find(all_trials(:,19) == 1);
@@ -489,24 +554,33 @@ bk4_bg = find(all_trials(:,19) == 7);
 bk4_sm = find(all_trials(:,19) == 8);
 
     %block 1;
-    FR_bk1_sh = FR_1st_norm(bk1_sh,1); %firing on short reward;
-    FR_bk1_lo = FR_1st_norm(bk1_lo,1); %firing on long reward;
+    FR_bk1_sh = FR_1st(bk1_sh,1); %firing on short reward;
+    FR_bk1_lo = FR_1st(bk1_lo,1); %firing on long reward;
+    FR_bk1_sh_base = FR_1st(bk1_sh,5); %firing on short reward;
+    FR_bk1_lo_base = FR_1st(bk1_lo,5); %firing on long reward;
+
 
     %block 2;
-    FR_bk2_sh = FR_1st_norm(bk2_sh,1); %firing on short reward; PPE
-    FR_bk2_lo = FR_1st_norm(bk2_lo,1); %firing on long reward;
-    FR_bk2_lo_np = FR_1st_norm(bk2_lo,2); %firing on short reward omission; NPE
+    FR_bk2_sh = FR_1st(bk2_sh,1); %firing on short reward; PPE
+    FR_bk2_lo = FR_1st(bk2_lo,1); %firing on long reward;
+    FR_bk2_lo_np = FR_1st(bk2_lo,2); %firing on short reward omission; NPE
+    FR_bk2_sh_base = FR_1st(bk2_sh,5); %firing on short reward; PPE
+    FR_bk2_lo_base = FR_1st(bk2_lo,5); %firing on long reward;
 
     %block 3;
-    FR_bk3_bg1 = FR_1st_norm(bk3_bg,1); %firing on short reward; PPE
-    FR_bk3_bg2 = FR_1st_norm(bk3_bg,3); %firing on big reward; PPE
-    FR_bk3_sm = FR_1st_norm(bk3_sm,1); %firing on small reward;
+    FR_bk3_bg1 = FR_1st(bk3_bg,1); %firing on short reward; PPE
+    FR_bk3_bg2 = FR_1st(bk3_bg,3); %firing on big reward; PPE
+    FR_bk3_sm = FR_1st(bk3_sm,1); %firing on small reward;
+    FR_bk3_bg_base = FR_1st(bk3_bg,5); %firing on short reward; PPE
+    FR_bk3_sm_base = FR_1st(bk3_sm,5); %firing on small reward;
    
     %block 4;
-    FR_bk4_bg1 = FR_1st_norm(bk4_bg,1); %firing on 1st drop; PPE
-    FR_bk4_bg2 = FR_1st_norm(bk4_bg,3); %firing on 2nd drop; PPE
-    FR_bk4_sm1 = FR_1st_norm(bk4_sm,1); %firing on small reward;
-    FR_bk4_sm2 = FR_1st_norm(bk4_sm,3); %firing on big reward omission; NPE
+    FR_bk4_bg1 = FR_1st(bk4_bg,1); %firing on 1st drop; PPE
+    FR_bk4_bg2 = FR_1st(bk4_bg,3); %firing on 2nd drop; PPE
+    FR_bk4_sm1 = FR_1st(bk4_sm,1); %firing on small reward;
+    FR_bk4_sm2 = FR_1st(bk4_sm,3); %firing on big reward omission; NPE
+    FR_bk4_bg_base = FR_1st(bk4_bg,5); %firing on 2nd drop; PPE
+    FR_bk4_sm_base = FR_1st(bk4_sm,5); %firing on small reward;
 
 %Extract first and last some trials; defined by First_T and Last_T;
 %First trials;
@@ -525,6 +599,11 @@ FR_bk4_bg1_F = FR_bk4_bg1(1:First_T,:);
 FR_bk4_bg2_F = FR_bk4_bg2(1:First_T,:);
 FR_bk4_sm1_F = FR_bk4_sm1(1:First_T,:);
 FR_bk4_sm2_F = FR_bk4_sm2(1:First_T,:);
+
+FR_bk1_base_F = (FR_bk1_sh_base(1:First_T,:) + FR_bk1_lo_base(1:First_T,:)/2);
+FR_bk2_base_F = (FR_bk2_sh_base(1:First_T,:) + FR_bk2_lo_base(1:First_T,:)/2);
+FR_bk3_base_F = (FR_bk3_bg_base(1:First_T,:) + FR_bk3_sm_base(1:First_T,:)/2);
+FR_bk4_base_F = (FR_bk4_bg_base(1:First_T,:) + FR_bk4_sm_base(1:First_T,:)/2);
 
 %last trials;
 if Block1_last == 0;
@@ -550,91 +629,182 @@ FR_bk4_bg2_L = FR_bk4_bg2(length(FR_bk4_bg2)-Last_T+1:length(FR_bk4_bg2),:);
 FR_bk4_sm1_L = FR_bk4_sm1(length(FR_bk4_sm1)-Last_T+1:length(FR_bk4_sm1),:);
 FR_bk4_sm2_L = FR_bk4_sm2(length(FR_bk4_sm2)-Last_T+1:length(FR_bk4_sm2),:);
 
+FR_bk2_base_L = (FR_bk2_sh_base(length(FR_bk2_sh_base)-Last_T+1:length(FR_bk2_sh_base),:) + ...
+    FR_bk2_lo_base(length(FR_bk2_lo_base)-Last_T+1:length(FR_bk2_lo_base),:))/2;
+FR_bk3_base_L = (FR_bk3_bg_base(length(FR_bk3_bg_base)-Last_T+1:length(FR_bk3_bg_base),:) + ...
+    FR_bk3_sm_base(length(FR_bk3_sm_base)-Last_T+1:length(FR_bk3_sm_base),:))/2;
+FR_bk4_base_L = (FR_bk4_bg_base(length(FR_bk4_bg_base)-Last_T+1:length(FR_bk4_bg_base),:) + ...
+    FR_bk4_sm_base(length(FR_bk4_sm_base)-Last_T+1:length(FR_bk4_sm_base),:))/2;
+
 %COMBINE blocks;
-%Separate analysis for DELAY and SIZE blocks;
-%DELAY PPE
-dPPE_F = cat(1,FR_bk2_sh_F,FR_bk3_bg1_F); %early;
-dPPE_L = cat(1,FR_bk2_sh_L,FR_bk3_bg1_L); %late;
+PPE_F = (FR_bk2_sh_F + FR_bk3_bg1_F + FR_bk3_bg2_F + FR_bk4_bg2_F)/4';
+PPE_L = (FR_bk2_sh_L + FR_bk3_bg1_L + FR_bk3_bg2_L + FR_bk4_bg2_L)/4;
 
-%DELAY NPE;
-dNPE_F = FR_bk2_lo_np_F; %early;
-dNPE_L = FR_bk2_lo_np_L; %late;
+NPE_F = (FR_bk2_lo_np_F + FR_bk4_sm2_F)/2';
+NPE_L = (FR_bk2_lo_np_L + FR_bk4_sm2_L)/2';
 
-%SIZE PPE;
-sPPE_F = cat(1,FR_bk3_bg2_F,FR_bk4_bg2_F); %early;
-sPPE_L = cat(1,FR_bk3_bg2_L,FR_bk4_bg2_L); %late;
-
-%SIZE NPE;
-sNPE_F = FR_bk4_sm2_F; %early;
-sNPE_L = FR_bk4_sm2_L; %late;
-
-%Combine delay and size;
-%PPE all;
-PPE_F = cat(1,dPPE_F,sPPE_F); %early;
-PPE_L = cat(1,dPPE_L,sPPE_L); %late;
-
-%NPE all;
-NPE_F = cat(1,dNPE_F,sNPE_F); %early;
-NPE_L = cat(1,dNPE_L,sNPE_L); %late;
-
-%STATISTICS; comparison between early and late trials;
-%DELAY;
-[h_dPPE,p_dPPE] = ttest2(dPPE_F(:,1),dPPE_L(:,1));
-[h_dNPE,p_dNPE] = ttest2(dNPE_F(:,1),dNPE_L(:,1));
-
-%SIZE;
-[h_sPPE,p_sPPE] = ttest2(sPPE_F(:,1),sPPE_L(:,1));
-[h_sNPE,p_sNPE] = ttest2(sNPE_F(:,1),sNPE_L(:,1));
-
-%PPE all;
-[h_PPE,p_PPE] = ttest2(PPE_F(:,1),PPE_L(:,1));
-[h_NPE,p_NPE] = ttest2(NPE_F(:,1),NPE_L(:,1));
-
-%Make results array;
-%DELAY;
-array_dPE = cat(2,h_dPPE,p_dPPE,mean(dPPE_F(:,1)),mean(dPPE_L(:,1)),h_dNPE,p_dNPE,mean(dNPE_F(:,1)),mean(dNPE_L(:,1)));
-
-%SIZE;
-array_sPE = cat(2,h_sPPE,p_sPPE,mean(sPPE_F(:,1)),mean(sPPE_L(:,1)),h_sNPE,p_sNPE,mean(sNPE_F(:,1)),mean(sNPE_L(:,1)));
-
-%PE all;
-array_PE = cat(2,h_PPE,p_PPE,mean(PPE_F(:,1)),mean(PPE_L(:,1)),h_NPE,p_NPE,mean(NPE_F(:,1)),mean(NPE_L(:,1)));
-
-%block 3 bg;
-array_bk3 = cat(2,mean(FR_bk3_bg1_F),mean(FR_bk3_bg1_L),mean(FR_bk3_bg2_F),mean(FR_bk3_bg2_L));
+PE_base_F = (FR_bk2_base_F + FR_bk3_base_F + FR_bk4_base_F)/3';
+PE_base_L = (FR_bk2_base_L + FR_bk3_base_L + FR_bk4_base_L)/3';
 
 %COMBINE ALL CELLS;
-cat_dPE(cell_count,:) = cat(1,array_dPE);
-cat_sPE(cell_count,:) = cat(1,array_sPE);
-cat_PE(cell_count,:) = cat(1,array_PE);
+if cell_count <=44;
+    Ctrl_PPE_F(cell_count,:) = cat(1,PPE_F);
+    Ctrl_PPE_L(cell_count,:) = cat(1,PPE_L);
+    Ctrl_NPE_F(cell_count,:) = cat(1,NPE_F);
+    Ctrl_NPE_L(cell_count,:) = cat(1,NPE_L);
+    Ctrl_PE_F(cell_count,:) = cat(1,PE_base_F);
+    Ctrl_PE_L(cell_count,:) = cat(1,PE_base_L);
+else if cell_count > 44;
+        HCx_PPE_F(cell_count - 44,:) = cat(1,PPE_F);
+        HCx_PPE_L(cell_count - 44,:) = cat(1,PPE_L);
+        HCx_NPE_F(cell_count - 44,:) = cat(1,NPE_F);
+        HCx_NPE_L(cell_count - 44,:) = cat(1,NPE_L);
+        HCx_PE_F(cell_count - 44,:) = cat(1,PE_base_F);
+        HCx_PE_L(cell_count - 44,:) = cat(1,PE_base_L);
+    end
+end
 
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%MAKE DISTRIBUTION FIGURES;
-%CALCULATE INDEX;
-idx_PE(:,1) = cat_PE(:,3) - cat_PE(:,4); %PPE;
-idx_PE(:,2) = cat_PE(:,7) - cat_PE(:,8); %NPP;
+%CALCULATE AVERAGE AND SEM;
+avg_Ctrl_PPE_F = mean(Ctrl_PPE_F,1);
+avg_Ctrl_PPE_L = mean(Ctrl_PPE_L,1);
+avg_Ctrl_NPE_F = mean(Ctrl_NPE_F,1);
+avg_Ctrl_NPE_L = mean(Ctrl_NPE_L,1);
+avg_Ctrl_PE_F = mean(Ctrl_PE_F,1);
+avg_Ctrl_PE_L = mean(Ctrl_PE_L,1);
 
-x = -20:0.5:20;
-idx_PE_score(:,1) = histc(idx_PE(:,1),x); %PPE; 
-idx_PE_score(:,2) = histc(idx_PE(:,2),x); %NPE;
+avg_HCx_PPE_F = mean(HCx_PPE_F,1);
+avg_HCx_PPE_L = mean(HCx_PPE_L,1);
+avg_HCx_NPE_F = mean(HCx_NPE_F,1);
+avg_HCx_NPE_L = mean(HCx_NPE_L,1);
+avg_HCx_PE_F = mean(HCx_PE_F,1);
+avg_HCx_PE_L = mean(HCx_PE_L,1);
 
-%MAKE FIGURES; 
-x2 = x + 0.25;
+%Calculate case mean = mean of all trials in each case(cell);
+case_mean_Ctrl_PPE_F = mean(Ctrl_PPE_F,2);
+case_mean_Ctrl_PPE_L = mean(Ctrl_PPE_L,2);
+case_mean_Ctrl_NPE_F = mean(Ctrl_NPE_F,2);
+case_mean_Ctrl_NPE_L = mean(Ctrl_NPE_L,2);
+case_mean_Ctrl_PE_F = mean(Ctrl_PE_F,2);
+case_mean_Ctrl_PE_L = mean(Ctrl_PE_L,2);
+case_mean_HCx_PPE_F = mean(HCx_PPE_F,2);
+case_mean_HCx_PPE_L = mean(HCx_PPE_L,2);
+case_mean_HCx_NPE_F = mean(HCx_NPE_F,2);
+case_mean_HCx_NPE_L = mean(HCx_NPE_L,2);
+case_mean_HCx_PE_F = mean(HCx_PE_F,2);
+case_mean_HCx_PE_L = mean(HCx_PE_L,2);
 
-figure %figure1 PPE;
-bar(x2,idx_PE_score(:,1),'BarWidth',1,'FaceColor',[0.5 0.5 0.5]);hold on;
-bar(0,30,'FaceColor',[0 0 0],'EdgeColor',[0 0 0],'BarWidth',0.1); hold on
+%calculate 'grand mean" (average of all trials on all subjects);
+grand_mean_Ctrl_PPE_F = mean(mean(Ctrl_PPE_F,1),2);
+grand_mean_Ctrl_PPE_L = mean(mean(Ctrl_PPE_L,1),2);
+grand_mean_Ctrl_NPE_F = mean(mean(Ctrl_NPE_F,1),2);
+grand_mean_Ctrl_NPE_L = mean(mean(Ctrl_NPE_L,1),2);
+grand_mean_Ctrl_PE_F = mean(mean(Ctrl_PE_F,1),2);
+grand_mean_Ctrl_PE_L = mean(mean(Ctrl_PE_L,1),2);
+grand_mean_HCx_PPE_F = mean(mean(HCx_PPE_F,1),2);
+grand_mean_HCx_PPE_L = mean(mean(HCx_PPE_L,1),2);
+grand_mean_HCx_NPE_F = mean(mean(HCx_NPE_F,1),2);
+grand_mean_HCx_NPE_L = mean(mean(HCx_NPE_L,1),2);
+grand_mean_HCx_PE_F = mean(mean(HCx_PE_F,1),2);
+grand_mean_HCx_PE_L = mean(mean(HCx_PE_L,1),2);
+
+%calcuate adjusted value  = 'grand mean - case mean';
+adj_value_Ctrl_PPE_F = grand_mean_Ctrl_PPE_F - case_mean_Ctrl_PPE_F;
+adj_value_Ctrl_PPE_L = grand_mean_Ctrl_PPE_L - case_mean_Ctrl_PPE_L;
+adj_value_Ctrl_NPE_F = grand_mean_Ctrl_NPE_F - case_mean_Ctrl_NPE_F;
+adj_value_Ctrl_NPE_L = grand_mean_Ctrl_NPE_L - case_mean_Ctrl_NPE_L;
+adj_value_Ctrl_PE_F = grand_mean_Ctrl_PE_F - case_mean_Ctrl_PE_F;
+adj_value_Ctrl_PE_L = grand_mean_Ctrl_PE_L - case_mean_Ctrl_PE_L;
+adj_value_HCx_PPE_F = grand_mean_HCx_PPE_F - case_mean_HCx_PPE_F;
+adj_value_HCx_PPE_L = grand_mean_HCx_PPE_L - case_mean_HCx_PPE_L;
+adj_value_HCx_NPE_F = grand_mean_HCx_NPE_F - case_mean_HCx_NPE_F;
+adj_value_HCx_NPE_L = grand_mean_HCx_NPE_L - case_mean_HCx_NPE_L;
+adj_value_HCx_PE_F = grand_mean_HCx_PE_F - case_mean_HCx_PE_F;
+adj_value_HCx_PE_L = grand_mean_HCx_PE_L - case_mean_HCx_PE_L;
+
+%calculate adjusted numbers; actual number + adjusted value
+for a = 1:First_T;
+    adj_Ctrl_PPE_F(:,a) = Ctrl_PPE_F(:,a) + adj_value_Ctrl_PPE_F;
+    adj_Ctrl_NPE_F(:,a) = Ctrl_NPE_F(:,a) + adj_value_Ctrl_NPE_F
+    adj_Ctrl_PE_F(:,a) = Ctrl_PE_F(:,a) + adj_value_Ctrl_PE_F;
+    adj_HCx_PPE_F(:,a) = HCx_PPE_F(:,a) + adj_value_HCx_PPE_F;
+    adj_HCx_NPE_F(:,a) = HCx_NPE_F(:,a) + adj_value_HCx_NPE_F
+    adj_HCx_PE_F(:,a) = HCx_PE_F(:,a) + adj_value_HCx_PE_F;
+end
+
+for a = 1:Last_T;
+    adj_Ctrl_PPE_L(:,a) = Ctrl_PPE_L(:,a) + adj_value_Ctrl_PPE_L;
+    adj_Ctrl_NPE_L(:,a) = Ctrl_NPE_L(:,a) + adj_value_Ctrl_NPE_L;
+    adj_Ctrl_PE_L(:,a) = Ctrl_PE_L(:,a) + adj_value_Ctrl_PE_L;
+    adj_HCx_PPE_L(:,a) = HCx_PPE_L(:,a) + adj_value_HCx_PPE_L;
+    adj_HCx_NPE_L(:,a) = HCx_NPE_L(:,a) + adj_value_HCx_NPE_L;
+    adj_HCx_PE_L(:,a) = HCx_PE_L(:,a) + adj_value_HCx_PE_L;
+end
+    
+%Calculate within subject sem;
+sem_Ctrl_PPE_F = std(adj_Ctrl_PPE_F,1)/sqrt(length(adj_Ctrl_PPE_F(:,1)));
+sem_Ctrl_PPE_L = std(adj_Ctrl_PPE_L,1)/sqrt(length(adj_Ctrl_PPE_L(:,1)));
+sem_Ctrl_NPE_F = std(adj_Ctrl_NPE_F,1)/sqrt(length(adj_Ctrl_NPE_F(:,1)));
+sem_Ctrl_NPE_L = std(adj_Ctrl_NPE_L,1)/sqrt(length(adj_Ctrl_NPE_L(:,1)));
+sem_Ctrl_PE_F = std(adj_Ctrl_PE_F,1)/sqrt(length(adj_Ctrl_PE_F(:,1)));
+sem_Ctrl_PE_L = std(adj_Ctrl_PE_L,1)/sqrt(length(adj_Ctrl_PE_L(:,1)));
+sem_HCx_PPE_F = std(adj_HCx_PPE_F,1)/sqrt(length(adj_HCx_PPE_F(:,1)));
+sem_HCx_PPE_L = std(adj_HCx_PPE_L,1)/sqrt(length(adj_HCx_PPE_L(:,1)));
+sem_HCx_NPE_F = std(adj_HCx_NPE_F,1)/sqrt(length(adj_HCx_NPE_F(:,1)));
+sem_HCx_NPE_L = std(adj_HCx_NPE_L,1)/sqrt(length(adj_HCx_NPE_L(:,1)));
+sem_HCx_PE_F = std(adj_HCx_PE_F,1)/sqrt(length(adj_HCx_PE_F(:,1)));
+sem_HCx_PE_L = std(adj_HCx_PE_L,1)/sqrt(length(adj_HCx_PE_L(:,1)));
+
+PE_Ctrl_single = mean(cat(2,avg_Ctrl_PE_F,avg_Ctrl_PE_L));
+PE_HCx_single = mean(cat(2,avg_HCx_PE_F,avg_HCx_PE_L));
+        
+avg_Ctrl_PE_F = [];
+avg_Ctrl_PE_L = [];
+avg_HCx_PE_F = [];
+avg_HCx_PE_L = [];
+
+avg_Ctrl_PE_F(1,1:First_T) = PE_Ctrl_single;
+avg_Ctrl_PE_L(1,1:Last_T) = PE_Ctrl_single;
+avg_HCx_PE_F(1,1:First_T) = PE_HCx_single;
+avg_HCx_PE_L(1,1:Last_T) = PE_HCx_single;
+
+%Make figures;
+x_F = 1:First_T; 
+x_L = First_T + 1: First_T + Last_T;
+
+%figure 1;
+figure1 = figure;
+axes1 = axes('XTick',[0 2 4 6 8 10],'YTick',[1 2 3 4 5],'Parent',figure1);
+axis(axes1,[0 11 1 5.5]);
+hold(axes1,'all');
+
+plot(x_F,avg_Ctrl_PE_F,'LineWidth',3,'Color',[.8 .8 .8],'LineStyle',':');hold on; %gray dashed = base
+plot(x_L,avg_Ctrl_PE_L,'LineWidth',3,'Color',[.8 .8 .8],'LineStyle',':');hold on; %gray dashed = base
+
+errorbar(x_F,avg_Ctrl_NPE_F,sem_Ctrl_NPE_F,'LineWidth',3,'Color',[.7 .7 .7]);hold on; %gray = NPE
+errorbar(x_F,avg_Ctrl_PPE_F,sem_Ctrl_PPE_F,'LineWidth',3,'Color',[0 0 0]);hold on; %black = PPE
+
+errorbar(x_L,avg_Ctrl_NPE_L,sem_Ctrl_NPE_L,'LineWidth',3,'Color',[.7 .7 .7]);hold on; %gray = NPE
+errorbar(x_L,avg_Ctrl_PPE_L,sem_Ctrl_PPE_L,'LineWidth',3,'Color',[0 0 0]);hold on; %black = PPE
 box off;
-title('Fig1 PPE');
-%axis square;
-xlim([-20 20]);
 
-figure %figure2 NPE;
-bar(x2,idx_PE_score(:,2),'BarWidth',1,'FaceColor',[0.5 0.5 0.5]);hold on;
-bar(0,30,'FaceColor',[0 0 0],'EdgeColor',[0 0 0],'BarWidth',0.1); hold on
+
+%figure 2;
+figure2 = figure;
+axes1 = axes('XTick',[0 2 4 6 8 10],'YTick',[1 2 3 4 5],'Parent',figure2);
+axis(axes1,[0 11 1 5.5]);
+hold(axes1,'all');
+
+plot(x_F,avg_HCx_PE_F,'LineWidth',3,'Color',[.8 .8 .8],'LineStyle',':');hold on; %gray dashed = base
+plot(x_L,avg_HCx_PE_L,'LineWidth',3,'Color',[.8 .8 .8],'LineStyle',':');hold on; %gray dashed = base
+
+errorbar(x_F,avg_HCx_NPE_F,sem_HCx_NPE_F,'LineWidth',3,'Color',[.7 .7 .7]);hold on; %gray = NPE
+errorbar(x_F,avg_HCx_PPE_F,sem_HCx_PPE_F,'LineWidth',3,'Color',[0 0 0]);hold on; %black = PPE
+
+errorbar(x_L,avg_HCx_NPE_L,sem_HCx_NPE_L,'LineWidth',3,'Color',[.7 .7 .7]);hold on; %gray = NPE
+errorbar(x_L,avg_HCx_PPE_L,sem_HCx_PPE_L,'LineWidth',3,'Color',[0 0 0]);hold on; %black = PPE
 box off;
-title('Fig2 NPE');
-%axis square;
-xlim([-20 20]);
+    
+    

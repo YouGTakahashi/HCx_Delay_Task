@@ -12,8 +12,8 @@ filtering = 1;
 windowSize = 10;
 
 %LOAD FILES
-for cell_count = 1:44; 				
-%DE_Shm				
+for cell_count = 1:110; 				
+%Ctrl				
 if cell_count ==	1	load	sham_DA_unit1	; end
 if cell_count ==	2	load	sham_DA_unit2	; end
 if cell_count ==	3	load	sham_DA_unit3	; end
@@ -58,6 +58,73 @@ if cell_count ==	41	load	sham_DA_unit41	; end
 if cell_count ==	42	load	sham_DA_unit42	; end
 if cell_count ==	43	load	sham_DA_unit43	; end
 if cell_count ==	44	load	sham_DA_unit44	; end
+%HCx				
+if cell_count ==	45	load	HCx_DA_unit1	; end
+if cell_count ==	46	load	HCx_DA_unit2	; end
+if cell_count ==	47	load	HCx_DA_unit3	; end
+if cell_count ==	48	load	HCx_DA_unit4	; end
+if cell_count ==	49	load	HCx_DA_unit5	; end
+if cell_count ==	50	load	HCx_DA_unit6	; end
+if cell_count ==	51	load	HCx_DA_unit7	; end
+if cell_count ==	52	load	HCx_DA_unit8	; end
+if cell_count ==	53	load	HCx_DA_unit9	; end
+if cell_count ==	54	load	HCx_DA_unit10	; end
+if cell_count ==	55	load	HCx_DA_unit11	; end
+if cell_count ==	56	load	HCx_DA_unit12	; end
+if cell_count ==	57	load	HCx_DA_unit13	; end
+if cell_count ==	58	load	HCx_DA_unit14	; end
+if cell_count ==	59	load	HCx_DA_unit15	; end
+if cell_count ==	60	load	HCx_DA_unit16	; end
+if cell_count ==	61	load	HCx_DA_unit17	; end
+if cell_count ==	62	load	HCx_DA_unit18	; end
+if cell_count ==	63	load	HCx_DA_unit19	; end
+if cell_count ==	64	load	HCx_DA_unit20	; end
+if cell_count ==	65	load	HCx_DA_unit21	; end
+if cell_count ==	66	load	HCx_DA_unit22	; end
+if cell_count ==	67	load	HCx_DA_unit23	; end
+if cell_count ==	68	load	HCx_DA_unit24	; end
+if cell_count ==	69	load	HCx_DA_unit25	; end
+if cell_count ==	70	load	HCx_DA_unit26	; end
+if cell_count ==	71	load	HCx_DA_unit27	; end
+if cell_count ==	72	load	HCx_DA_unit28	; end
+if cell_count ==	73	load	HCx_DA_unit29	; end
+if cell_count ==	74	load	HCx_DA_unit30	; end
+if cell_count ==	75	load	HCx_DA_unit31	; end
+if cell_count ==	76	load	HCx_DA_unit32	; end
+if cell_count ==	77	load	HCx_DA_unit33	; end
+if cell_count ==	78	load	HCx_DA_unit34	; end
+if cell_count ==	79	load	HCx_DA_unit35	; end
+if cell_count ==	80	load	HCx_DA_unit36	; end
+if cell_count ==	81	load	HCx_DA_unit37	; end
+if cell_count ==	82	load	HCx_DA_unit38	; end
+if cell_count ==	83	load	HCx_DA_unit39	; end
+if cell_count ==	84	load	HCx_DA_unit40	; end
+if cell_count ==	85	load	HCx_DA_unit41	; end
+if cell_count ==	86	load	HCx_DA_unit42	; end
+if cell_count ==	87	load	HCx_DA_unit43	; end
+if cell_count ==	88	load	HCx_DA_unit44	; end
+if cell_count ==	89	load	HCx_DA_unit45	; end
+if cell_count ==	90	load	HCx_DA_unit46	; end
+if cell_count ==	91	load	HCx_DA_unit47	; end
+if cell_count ==	92	load	HCx_DA_unit48	; end
+if cell_count ==	93	load	HCx_DA_unit49	; end
+if cell_count ==	94	load	HCx_DA_unit50	; end
+if cell_count ==	95	load	HCx_DA_unit51	; end
+if cell_count ==	96	load	HCx_DA_unit52	; end
+if cell_count ==	97	load	HCx_DA_unit53	; end
+if cell_count ==	98	load	HCx_DA_unit54	; end
+if cell_count ==	99	load	HCx_DA_unit55	; end
+if cell_count ==	100	load	HCx_DA_unit56	; end
+if cell_count ==	101	load	HCx_DA_unit57	; end
+if cell_count ==	102	load	HCx_DA_unit58	; end
+if cell_count ==	103	load	HCx_DA_unit59	; end
+if cell_count ==	104	load	HCx_DA_unit60	; end
+if cell_count ==	105	load	HCx_DA_unit61	; end
+if cell_count ==	106	load	HCx_DA_unit62	; end
+if cell_count ==	107	load	HCx_DA_unit63	; end
+if cell_count ==	108	load	HCx_DA_unit64	; end
+if cell_count ==	109	load	HCx_DA_unit65	; end
+if cell_count ==	110	load	HCx_DA_unit66	; end
 
 %CLEAR VARIABLES;
 clear all_trials FR_base spike_times_idx spike_times spike_idx spike_idx_n;
@@ -633,371 +700,128 @@ array_bk4_sm_F = mean(FR_bk4_sm_F,1);
 array_bk4_sm_L = mean(FR_bk4_sm_L,1);
 
 %COMBINE ALL CELLS;
-cat_dPPE_F(cell_count,:) = cat(1,array_dPPE_F);
-cat_dPPE_L(cell_count,:) = cat(1,array_dPPE_L);
-cat_dNPE_F(cell_count,:) = cat(1,array_dNPE_F);
-cat_dNPE_L(cell_count,:) = cat(1,array_dNPE_L);
+if cell_count <= 44;
+    Ctrl_PPE_F(cell_count,:) = cat(1,array_PPE_F);
+    Ctrl_PPE_L(cell_count,:) = cat(1,array_PPE_L);
+    Ctrl_NPE_F(cell_count,:) = cat(1,array_NPE_F);
+    Ctrl_NPE_L(cell_count,:) = cat(1,array_NPE_L);
 
-cat_sPPE_F(cell_count,:) = cat(1,array_sPPE_F);
-cat_sPPE_L(cell_count,:) = cat(1,array_sPPE_L);
-cat_sNPE_F(cell_count,:) = cat(1,array_sNPE_F);
-cat_sNPE_L(cell_count,:) = cat(1,array_sNPE_L);
-
-cat_PPE_F(cell_count,:) = cat(1,array_PPE_F);
-cat_PPE_L(cell_count,:) = cat(1,array_PPE_L);
-cat_NPE_F(cell_count,:) = cat(1,array_NPE_F);
-cat_NPE_L(cell_count,:) = cat(1,array_NPE_L);
-
-cat_bk2_sh_F(cell_count,:) = cat(1,array_bk2_sh_F);
-cat_bk2_sh_L(cell_count,:) = cat(1,array_bk2_sh_L);
-cat_bk2_lo_F(cell_count,:) = cat(1,array_bk2_lo_F);
-cat_bk2_lo_L(cell_count,:) = cat(1,array_bk2_lo_L);
-cat_bk3_bg_F(cell_count,:) = cat(1,array_bk3_bg_F);
-cat_bk3_bg_L(cell_count,:) = cat(1,array_bk3_bg_L);
-cat_bk3_sm_F(cell_count,:) = cat(1,array_bk3_sm_F);
-cat_bk3_sm_L(cell_count,:) = cat(1,array_bk3_sm_L);
-cat_bk4_bg_F(cell_count,:) = cat(1,array_bk4_bg_F);
-cat_bk4_bg_L(cell_count,:) = cat(1,array_bk4_bg_L);
-cat_bk4_sm_F(cell_count,:) = cat(1,array_bk4_sm_F);
-cat_bk4_sm_L(cell_count,:) = cat(1,array_bk4_sm_L);
-
-
+else if cell_count > 45;
+        HCx_PPE_F(cell_count-44,:) = cat(1,array_PPE_F);
+        HCx_PPE_L(cell_count-44,:) = cat(1,array_PPE_L);
+        HCx_NPE_F(cell_count-44,:) = cat(1,array_NPE_F);
+        HCx_NPE_L(cell_count-44,:) = cat(1,array_NPE_L);
+    end
 end
+end
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Calculate difference lines (First - Last);
-cat_dPPE_D = cat_dPPE_F - cat_dPPE_L;
-cat_dNPE_D = cat_dNPE_F - cat_dNPE_L;
-cat_sPPE_D = cat_sPPE_F - cat_sPPE_L;
-cat_sNPE_D = cat_sNPE_F - cat_sNPE_L;
-
-cat_PPE_D = cat_PPE_F - cat_PPE_L;
-cat_NPE_D = cat_NPE_F - cat_NPE_L;
-
-cat_bk2_sh_D = cat_bk2_sh_F - cat_bk2_sh_L;
-cat_bk2_lo_D = cat_bk2_lo_F - cat_bk2_lo_L;
-cat_bk3_bg_D = cat_bk3_bg_F - cat_bk3_bg_L;
-cat_bk3_sm_D = cat_bk3_sm_F - cat_bk3_sm_L;
-cat_bk4_bg_D = cat_bk4_bg_F - cat_bk4_bg_L;
-cat_bk4_sm_D = cat_bk4_sm_F - cat_bk4_sm_L;
+Ctrl_PPE_D = Ctrl_PPE_F - Ctrl_PPE_L;
+Ctrl_NPE_D = Ctrl_NPE_F - Ctrl_NPE_L;
+HCx_PPE_D = HCx_PPE_F - HCx_PPE_L;
+HCx_NPE_D = HCx_NPE_F - HCx_NPE_L;
 
 %average;
-avg_dPPE_F = mean(cat_dPPE_F,1);
-avg_dPPE_L = mean(cat_dPPE_L,1);
-avg_dNPE_F = mean(cat_dNPE_F,1);
-avg_dNPE_L = mean(cat_dNPE_L,1);
-
-avg_sPPE_F = mean(cat_sPPE_F,1);
-avg_sPPE_L = mean(cat_sPPE_L,1);
-avg_sNPE_F = mean(cat_sNPE_F,1);
-avg_sNPE_L = mean(cat_sNPE_L,1);
-
-avg_PPE_F = mean(cat_PPE_F,1);
-avg_PPE_L = mean(cat_PPE_L,1);
-avg_NPE_F = mean(cat_NPE_F,1);
-avg_NPE_L = mean(cat_NPE_L,1);
-
-avg_dPPE_D = mean(cat_dPPE_D,1);
-avg_dNPE_D = mean(cat_dNPE_D,1);
-avg_sPPE_D = mean(cat_sPPE_D,1);
-avg_sNPE_D = mean(cat_sNPE_D,1);
-avg_PPE_D = mean(cat_PPE_D,1);
-avg_NPE_D = mean(cat_NPE_D,1);
-
-avg_bk2_sh_F = mean(cat_bk2_sh_F,1);
-avg_bk2_lo_F = mean(cat_bk2_lo_F,1);
-avg_bk3_bg_F = mean(cat_bk3_bg_F,1);
-avg_bk3_sm_F = mean(cat_bk3_sm_F,1);
-avg_bk4_bg_F = mean(cat_bk4_bg_F,1);
-avg_bk4_sm_F = mean(cat_bk4_sm_F,1);
-
-avg_bk2_sh_L = mean(cat_bk2_sh_L,1);
-avg_bk2_lo_L = mean(cat_bk2_lo_L,1);
-avg_bk3_bg_L = mean(cat_bk3_bg_L,1);
-avg_bk3_sm_L = mean(cat_bk3_sm_L,1);
-avg_bk4_bg_L = mean(cat_bk4_bg_L,1);
-avg_bk4_sm_L = mean(cat_bk4_sm_L,1);
-
-avg_bk2_sh_D = mean(cat_bk2_sh_D,1);
-avg_bk2_lo_D = mean(cat_bk2_lo_D,1);
-avg_bk3_bg_D = mean(cat_bk3_bg_D,1);
-avg_bk3_sm_D = mean(cat_bk3_sm_D,1);
-avg_bk4_bg_D = mean(cat_bk4_bg_D,1);
-avg_bk4_sm_D = mean(cat_bk4_sm_D,1);
-
+avg_Ctrl_PPE_F = mean(Ctrl_PPE_F,1);
+avg_Ctrl_PPE_L = mean(Ctrl_PPE_L,1);
+avg_Ctrl_NPE_F = mean(Ctrl_NPE_F,1);
+avg_Ctrl_NPE_L = mean(Ctrl_NPE_L,1);
+avg_Ctrl_PPE_D = mean(Ctrl_PPE_D,1);
+avg_Ctrl_NPE_D = mean(Ctrl_NPE_D,1);
+avg_HCx_PPE_F = mean(HCx_PPE_F,1);
+avg_HCx_PPE_L = mean(HCx_PPE_L,1);
+avg_HCx_NPE_F = mean(HCx_NPE_F,1);
+avg_HCx_NPE_L = mean(HCx_NPE_L,1);
+avg_HCx_PPE_D = mean(HCx_PPE_D,1);
+avg_HCx_NPE_D = mean(HCx_NPE_D,1);
 
 %Calculate case mean = mean of all trials in each case(cell);
-   case_mean_dPPE_F = mean(cat_dPPE_F,2);
-    case_mean_dPPE_L = mean(cat_dPPE_L,2);
-    case_mean_dNPE_F = mean(cat_dNPE_F,2);
-    case_mean_dNPE_L = mean(cat_dNPE_L,2);
-    
-    case_mean_sPPE_F = mean(cat_sPPE_F,2);
-    case_mean_sPPE_L = mean(cat_sPPE_L,2);
-    case_mean_sNPE_F = mean(cat_sNPE_F,2);
-    case_mean_sNPE_L = mean(cat_sNPE_L,2);
-    
-    case_mean_PPE_F = mean(cat_PPE_F,2);
-    case_mean_PPE_L = mean(cat_PPE_L,2);
-    case_mean_NPE_F = mean(cat_NPE_F,2);
-    case_mean_NPE_L = mean(cat_NPE_L,2);
-    
-    case_mean_dPPE_D = mean(cat_dPPE_D,2);
-    case_mean_sPPE_D = mean(cat_sPPE_D,2);
-    case_mean_dNPE_D = mean(cat_dNPE_D,2);
-    case_mean_sNPE_D = mean(cat_sNPE_D,2);
-    
-    case_mean_PPE_D = mean(cat_PPE_D,2);
-    case_mean_NPE_D = mean(cat_NPE_D,2);
-    
-    case_mean_bk2_sh_F = mean(cat_bk2_sh_F,2);
-    case_mean_bk2_lo_F = mean(cat_bk2_lo_F,2);
-    case_mean_bk3_bg_F = mean(cat_bk3_bg_F,2);
-    case_mean_bk3_sm_F = mean(cat_bk3_sm_F,2);
-    case_mean_bk4_bg_F = mean(cat_bk4_bg_F,2);
-    case_mean_bk4_sm_F = mean(cat_bk4_sm_F,2);
-    
-    case_mean_bk2_sh_L = mean(cat_bk2_sh_L,2);
-    case_mean_bk2_lo_L = mean(cat_bk2_lo_L,2);
-    case_mean_bk3_bg_L = mean(cat_bk3_bg_L,2);
-    case_mean_bk3_sm_L = mean(cat_bk3_sm_L,2);
-    case_mean_bk4_bg_L = mean(cat_bk4_bg_L,2);
-    case_mean_bk4_sm_L = mean(cat_bk4_sm_L,2);
-    
-    case_mean_bk2_sh_D = mean(cat_bk2_sh_D,2);
-    case_mean_bk2_lo_D = mean(cat_bk2_lo_D,2);
-    case_mean_bk3_bg_D = mean(cat_bk3_bg_D,2);
-    case_mean_bk3_sm_D = mean(cat_bk3_sm_D,2);
-    case_mean_bk4_bg_D = mean(cat_bk4_bg_D,2);
-    case_mean_bk4_sm_D = mean(cat_bk4_sm_D,2);
+case_mean_Ctrl_PPE_F = mean(Ctrl_PPE_F,2);
+case_mean_Ctrl_PPE_L = mean(Ctrl_PPE_L,2);
+case_mean_Ctrl_NPE_F = mean(Ctrl_NPE_F,2);
+case_mean_Ctrl_NPE_L = mean(Ctrl_NPE_L,2);
+case_mean_Ctrl_PPE_D = mean(Ctrl_PPE_D,2);
+case_mean_Ctrl_NPE_D = mean(Ctrl_NPE_D,2);
+case_mean_HCx_PPE_F = mean(HCx_PPE_F,2);
+case_mean_HCx_PPE_L = mean(HCx_PPE_L,2);
+case_mean_HCx_NPE_F = mean(HCx_NPE_F,2);
+case_mean_HCx_NPE_L = mean(HCx_NPE_L,2);
+case_mean_HCx_PPE_D = mean(HCx_PPE_D,2);
+case_mean_HCx_NPE_D = mean(HCx_NPE_D,2);
 
-    %calculate 'grand mean" (average of all trials on all subjects);
-    grand_mean_dPPE_F = mean(mean(cat_dPPE_F,1),2);
-    grand_mean_dPPE_L = mean(mean(cat_dPPE_L,1),2);
-    grand_mean_dNPE_F = mean(mean(cat_dNPE_F,1),2);
-    grand_mean_dNPE_L = mean(mean(cat_dNPE_L,1),2);
-    
-    grand_mean_sPPE_F = mean(mean(cat_sPPE_F,1),2);
-    grand_mean_sPPE_L = mean(mean(cat_sPPE_L,1),2);
-    grand_mean_sNPE_F = mean(mean(cat_sNPE_F,1),2);
-    grand_mean_sNPE_L = mean(mean(cat_sNPE_L,1),2);
-    
-    grand_mean_PPE_F = mean(mean(cat_PPE_F,1),2);
-    grand_mean_PPE_L = mean(mean(cat_PPE_L,1),2);
-    grand_mean_NPE_F = mean(mean(cat_NPE_F,1),2);
-    grand_mean_NPE_L = mean(mean(cat_NPE_L,1),2);
-    
-    grand_mean_dPPE_D = mean(mean(cat_dPPE_D,1),2);
-    grand_mean_sPPE_D = mean(mean(cat_sPPE_D,1),2);
-    grand_mean_dNPE_D = mean(mean(cat_dNPE_D,1),2);
-    grand_mean_sNPE_D = mean(mean(cat_sNPE_D,1),2);
-    
-    grand_mean_PPE_D = mean(mean(cat_PPE_D,1),2);
-    grand_mean_NPE_D = mean(mean(cat_NPE_D,1),2);
-    
-    grand_mean_bk2_sh_F = mean(mean(cat_bk2_sh_F,1),2);
-    grand_mean_bk2_lo_F = mean(mean(cat_bk2_lo_F,1),2);
-    grand_mean_bk3_bg_F = mean(mean(cat_bk3_bg_F,1),2);
-    grand_mean_bk3_sm_F = mean(mean(cat_bk3_sm_F,1),2);
-    grand_mean_bk4_bg_F = mean(mean(cat_bk4_bg_F,1),2);
-    grand_mean_bk4_sm_F = mean(mean(cat_bk4_sm_F,1),2);
-    
-    grand_mean_bk2_sh_L = mean(mean(cat_bk2_sh_L,1),2);
-    grand_mean_bk2_lo_L = mean(mean(cat_bk2_lo_L,1),2);
-    grand_mean_bk3_bg_L = mean(mean(cat_bk3_bg_L,1),2);
-    grand_mean_bk3_sm_L = mean(mean(cat_bk3_sm_L,1),2);
-    grand_mean_bk4_bg_L = mean(mean(cat_bk4_bg_L,1),2);
-    grand_mean_bk4_sm_L = mean(mean(cat_bk4_sm_L,1),2);
-    
-    grand_mean_bk2_sh_D = mean(mean(cat_bk2_sh_D,1),2);
-    grand_mean_bk2_lo_D = mean(mean(cat_bk2_lo_D,1),2);
-    grand_mean_bk3_bg_D = mean(mean(cat_bk3_bg_D,1),2);
-    grand_mean_bk3_sm_D = mean(mean(cat_bk3_sm_D,1),2);
-    grand_mean_bk4_bg_D = mean(mean(cat_bk4_bg_D,1),2);
-    grand_mean_bk4_sm_D = mean(mean(cat_bk4_sm_D,1),2);
-    
-    %calcuate adjusted value  = 'grand mean - case mean';
-    adj_value_dPPE_F = grand_mean_dPPE_F - case_mean_dPPE_F;
-    adj_value_dPPE_L = grand_mean_dPPE_L - case_mean_dPPE_L;
-    adj_value_dNPE_F = grand_mean_dNPE_F - case_mean_dNPE_F;
-    adj_value_dNPE_L = grand_mean_dNPE_L - case_mean_dNPE_L;
-    
-    adj_value_sPPE_F = grand_mean_sPPE_F - case_mean_sPPE_F;
-    adj_value_sPPE_L = grand_mean_sPPE_L - case_mean_sPPE_L;
-    adj_value_sNPE_F = grand_mean_sNPE_F - case_mean_sNPE_F;
-    adj_value_sNPE_L = grand_mean_sNPE_L - case_mean_sNPE_L;
-    
-    adj_value_PPE_F = grand_mean_PPE_F - case_mean_PPE_F;
-    adj_value_PPE_L = grand_mean_PPE_L - case_mean_PPE_L;
-    adj_value_NPE_F = grand_mean_NPE_F - case_mean_NPE_F;
-    adj_value_NPE_L = grand_mean_NPE_L - case_mean_NPE_L;
-    
-    adj_value_dPPE_D = grand_mean_dPPE_D- case_mean_dPPE_D;
-    adj_value_sPPE_D = grand_mean_sPPE_D - case_mean_sPPE_D;
-    adj_value_dNPE_D = grand_mean_dNPE_D - case_mean_dNPE_D;
-    adj_value_sNPE_D = grand_mean_sNPE_D - case_mean_sNPE_D;
-    
-    adj_value_PPE_D = grand_mean_PPE_D - case_mean_PPE_D;
-    adj_value_NPE_D = grand_mean_NPE_D - case_mean_NPE_D;
-    
-    adj_value_bk2_sh_F = grand_mean_bk2_sh_F- case_mean_bk2_sh_F;
-    adj_value_bk2_lo_F = grand_mean_bk2_lo_F- case_mean_bk2_lo_F;
-    adj_value_bk3_bg_F = grand_mean_bk3_bg_F- case_mean_bk3_bg_F;
-    adj_value_bk3_sm_F = grand_mean_bk3_sm_F- case_mean_bk3_sm_F;
-    adj_value_bk4_bg_F = grand_mean_bk4_bg_F- case_mean_bk4_bg_F;
-    adj_value_bk4_sm_F = grand_mean_bk4_sm_F- case_mean_bk4_sm_F;
-    
-    adj_value_bk2_sh_L = grand_mean_bk2_sh_L- case_mean_bk2_sh_L;
-    adj_value_bk2_lo_L = grand_mean_bk2_lo_L- case_mean_bk2_lo_L;
-    adj_value_bk3_bg_L = grand_mean_bk3_bg_L- case_mean_bk3_bg_L;
-    adj_value_bk3_sm_L = grand_mean_bk3_sm_L- case_mean_bk3_sm_L;
-    adj_value_bk4_bg_L = grand_mean_bk4_bg_L- case_mean_bk4_bg_L;
-    adj_value_bk4_sm_L = grand_mean_bk4_sm_L- case_mean_bk4_sm_L;
-    
-    adj_value_bk2_sh_D = grand_mean_bk2_sh_D- case_mean_bk2_sh_D;
-    adj_value_bk2_lo_D = grand_mean_bk2_lo_D- case_mean_bk2_lo_D;
-    adj_value_bk3_bg_D = grand_mean_bk3_bg_D- case_mean_bk3_bg_D;
-    adj_value_bk3_sm_D = grand_mean_bk3_sm_D- case_mean_bk3_sm_D;
-    adj_value_bk4_bg_D = grand_mean_bk4_bg_D- case_mean_bk4_bg_D;
-    adj_value_bk4_sm_D = grand_mean_bk4_sm_D- case_mean_bk4_sm_D;
-    
-     %calculate adjusted numbers; actual number + adjusted value
-    for a = 1:length(bin_centers);
-        adj_dPPE_F(:,a) = cat_dPPE_F(:,a) + adj_value_dPPE_F;
-        adj_dNPE_F(:,a) = cat_dNPE_F(:,a) + adj_value_dNPE_F;
-        adj_dPPE_L(:,a) = cat_dPPE_L(:,a) + adj_value_dPPE_L;
-        adj_dNPE_L(:,a) = cat_dNPE_L(:,a) + adj_value_dNPE_L;
-        
-        adj_sPPE_F(:,a) = cat_sPPE_F(:,a) + adj_value_sPPE_F;
-        adj_sNPE_F(:,a) = cat_sNPE_F(:,a) + adj_value_sNPE_F;
-        adj_sPPE_L(:,a) = cat_sPPE_L(:,a) + adj_value_sPPE_L;
-        adj_sNPE_L(:,a) = cat_sNPE_L(:,a) + adj_value_sNPE_L;
-        
-        adj_PPE_F(:,a) = cat_PPE_F(:,a) + adj_value_dPPE_F;
-        adj_NPE_F(:,a) = cat_NPE_F(:,a) + adj_value_NPE_F;
-        adj_PPE_L(:,a) = cat_PPE_L(:,a) + adj_value_PPE_L;
-        adj_NPE_L(:,a) = cat_NPE_L(:,a) + adj_value_NPE_L;
-        
-        adj_dPPE_D(:,a) = cat_dPPE_D(:,a) + adj_value_dPPE_D;
-        adj_sPPE_D(:,a) = cat_sPPE_D(:,a) + adj_value_sPPE_D;
-        adj_dNPE_D(:,a) = cat_dNPE_D(:,a) + adj_value_dNPE_D;
-        adj_sNPE_D(:,a) = cat_sNPE_D(:,a) + adj_value_sNPE_D;
-        
-        adj_PPE_D(:,a) = cat_PPE_D(:,a) + adj_value_PPE_D;
-        adj_NPE_D(:,a) = cat_NPE_D(:,a) + adj_value_NPE_D;
-        
-        adj_bk2_sh_F(:,a) = cat_bk2_sh_F(:,a) + adj_value_bk2_sh_F;
-        adj_bk2_lo_F(:,a) = cat_bk2_lo_F(:,a) + adj_value_bk2_lo_F;
-        adj_bk3_bg_F(:,a) = cat_bk3_bg_F(:,a) + adj_value_bk3_bg_F;
-        adj_bk3_sm_F(:,a) = cat_bk3_sm_F(:,a) + adj_value_bk3_sm_F;
-        adj_bk4_bg_F(:,a) = cat_bk4_bg_F(:,a) + adj_value_bk4_bg_F;
-        adj_bk4_sm_F(:,a) = cat_bk4_sm_F(:,a) + adj_value_bk4_sm_F;
-        
-        adj_bk2_sh_L(:,a) = cat_bk2_sh_L(:,a) + adj_value_bk2_sh_L;
-        adj_bk2_lo_L(:,a) = cat_bk2_lo_L(:,a) + adj_value_bk2_lo_L;
-        adj_bk3_bg_L(:,a) = cat_bk3_bg_L(:,a) + adj_value_bk3_bg_L;
-        adj_bk3_sm_L(:,a) = cat_bk3_sm_L(:,a) + adj_value_bk3_sm_L;
-        adj_bk4_bg_L(:,a) = cat_bk4_bg_L(:,a) + adj_value_bk4_bg_L;
-        adj_bk4_sm_L(:,a) = cat_bk4_sm_L(:,a) + adj_value_bk4_sm_L;
-        
-        adj_bk2_sh_D(:,a) = cat_bk2_sh_D(:,a) + adj_value_bk2_sh_D;
-        adj_bk2_lo_D(:,a) = cat_bk2_lo_D(:,a) + adj_value_bk2_lo_D;
-        adj_bk3_bg_D(:,a) = cat_bk3_bg_D(:,a) + adj_value_bk3_bg_D;
-        adj_bk3_sm_D(:,a) = cat_bk3_sm_D(:,a) + adj_value_bk3_sm_D;
-        adj_bk4_bg_D(:,a) = cat_bk4_bg_D(:,a) + adj_value_bk4_bg_D;
-        adj_bk4_sm_D(:,a) = cat_bk4_sm_D(:,a) + adj_value_bk4_sm_D;
-    end
-    
-     %Calculate within subject sem;
-    sem_dPPE_F = std(adj_dPPE_F,1)/sqrt(length(adj_dPPE_F(:,1)));
-    sem_dPPE_L = std(adj_dPPE_L,1)/sqrt(length(adj_dPPE_L(:,1)));
-    sem_dNPE_F = std(adj_dNPE_F,1)/sqrt(length(adj_dNPE_F(:,1)));
-    sem_dNPE_L = std(adj_dNPE_L,1)/sqrt(length(adj_dNPE_L(:,1)));
+%calculate 'grand mean" (average of all trials on all subjects);
+grand_mean_Ctrl_PPE_F = mean(mean(Ctrl_PPE_F,1),2);
+grand_mean_Ctrl_PPE_L = mean(mean(Ctrl_PPE_L,1),2);
+grand_mean_Ctrl_NPE_F = mean(mean(Ctrl_NPE_F,1),2);
+grand_mean_Ctrl_NPE_L = mean(mean(Ctrl_NPE_L,1),2);
+grand_mean_Ctrl_PPE_D = mean(mean(Ctrl_PPE_D,1),2);
+grand_mean_Ctrl_NPE_D = mean(mean(Ctrl_NPE_D,1),2);
+grand_mean_HCx_PPE_F = mean(mean(HCx_PPE_F,1),2);
+grand_mean_HCx_PPE_L = mean(mean(HCx_PPE_L,1),2);
+grand_mean_HCx_NPE_F = mean(mean(HCx_NPE_F,1),2);
+grand_mean_HCx_NPE_L = mean(mean(HCx_NPE_L,1),2);
+grand_mean_HCx_PPE_D = mean(mean(HCx_PPE_D,1),2);
+grand_mean_HCx_NPE_D = mean(mean(HCx_NPE_D,1),2);
 
-    sem_sPPE_F = std(adj_sPPE_F,1)/sqrt(length(adj_sPPE_F(:,1)));
-    sem_sPPE_L = std(adj_sPPE_L,1)/sqrt(length(adj_sPPE_L(:,1)));
-    sem_sNPE_F = std(adj_sNPE_F,1)/sqrt(length(adj_sNPE_F(:,1)));
-    sem_sNPE_L = std(adj_sNPE_L,1)/sqrt(length(adj_sNPE_L(:,1)));
-    
-    sem_dPPE_D = std(adj_dPPE_D,1)/sqrt(length(adj_dPPE_D(:,1)));
-    sem_sPPE_D = std(adj_sPPE_D,1)/sqrt(length(adj_sPPE_D(:,1)));
-    sem_dNPE_D = std(adj_dNPE_D,1)/sqrt(length(adj_dNPE_D(:,1)));
-    sem_sNPE_D = std(adj_sNPE_D,1)/sqrt(length(adj_sNPE_D(:,1)));
-    
-    sem_PPE_F = std(adj_PPE_F,1)/sqrt(length(adj_PPE_F(:,1)));
-    sem_PPE_L = std(adj_PPE_L,1)/sqrt(length(adj_PPE_L(:,1)));
-    sem_NPE_F = std(adj_NPE_F,1)/sqrt(length(adj_NPE_F(:,1)));
-    sem_NPE_L = std(adj_NPE_L,1)/sqrt(length(adj_NPE_L(:,1)));
-    
-    sem_PPE_D = std(adj_PPE_D,1)/sqrt(length(adj_PPE_D(:,1)));
-    sem_NPE_D = std(adj_NPE_D,1)/sqrt(length(adj_NPE_D(:,1)));
-    
-     sem_bk2_sh_F = std(adj_bk2_sh_F,1)/sqrt(length(adj_bk2_sh_F(:,1)));
-     sem_bk2_lo_F = std(adj_bk2_lo_F,1)/sqrt(length(adj_bk2_lo_F(:,1)));
-     sem_bk3_bg_F = std(adj_bk3_bg_F,1)/sqrt(length(adj_bk3_bg_F(:,1)));
-     sem_bk3_sm_F = std(adj_bk3_sm_F,1)/sqrt(length(adj_bk3_sm_F(:,1)));
-     sem_bk4_bg_F = std(adj_bk4_bg_F,1)/sqrt(length(adj_bk4_bg_F(:,1)));
-     sem_bk4_sm_F = std(adj_bk4_sm_F,1)/sqrt(length(adj_bk4_sm_F(:,1)));
-     
-     sem_bk2_sh_L = std(adj_bk2_sh_L,1)/sqrt(length(adj_bk2_sh_L(:,1)));
-     sem_bk2_lo_L = std(adj_bk2_lo_L,1)/sqrt(length(adj_bk2_lo_L(:,1)));
-     sem_bk3_bg_L = std(adj_bk3_bg_L,1)/sqrt(length(adj_bk3_bg_L(:,1)));
-     sem_bk3_sm_L = std(adj_bk3_sm_L,1)/sqrt(length(adj_bk3_sm_L(:,1)));
-     sem_bk4_bg_L = std(adj_bk4_bg_L,1)/sqrt(length(adj_bk4_bg_L(:,1)));
-     sem_bk4_sm_L = std(adj_bk4_sm_L,1)/sqrt(length(adj_bk4_sm_L(:,1)));
-     
-     sem_bk2_sh_D = std(adj_bk2_sh_D,1)/sqrt(length(adj_bk2_sh_D(:,1)));
-     sem_bk2_lo_D = std(adj_bk2_lo_D,1)/sqrt(length(adj_bk2_lo_D(:,1)));
-     sem_bk3_bg_D = std(adj_bk3_bg_D,1)/sqrt(length(adj_bk3_bg_D(:,1)));
-     sem_bk3_sm_D = std(adj_bk3_sm_D,1)/sqrt(length(adj_bk3_sm_D(:,1)));
-     sem_bk4_bg_D = std(adj_bk4_bg_D,1)/sqrt(length(adj_bk4_bg_D(:,1)));
-     sem_bk4_sm_D = std(adj_bk4_sm_D,1)/sqrt(length(adj_bk4_sm_D(:,1)));
-    
-    %Calcualte bottom varience with reversal order;
-    r_sem_dPPE_F = avg_dPPE_F(length(bin_centers):-1:1) - sem_dPPE_F(length(bin_centers):-1:1);
-    r_sem_dPPE_L = avg_dPPE_L(length(bin_centers):-1:1) - sem_dPPE_L(length(bin_centers):-1:1);
-    r_sem_dNPE_F = avg_dNPE_F(length(bin_centers):-1:1) - sem_dNPE_F(length(bin_centers):-1:1);
-    r_sem_dNPE_L = avg_dNPE_L(length(bin_centers):-1:1) - sem_dNPE_L(length(bin_centers):-1:1);
-    
-    r_sem_sPPE_F = avg_sPPE_F(length(bin_centers):-1:1) - sem_sPPE_F(length(bin_centers):-1:1);
-    r_sem_sPPE_L = avg_sPPE_L(length(bin_centers):-1:1) - sem_sPPE_L(length(bin_centers):-1:1);
-    r_sem_sNPE_F = avg_sNPE_F(length(bin_centers):-1:1) - sem_sNPE_F(length(bin_centers):-1:1);
-    r_sem_sNPE_L = avg_sNPE_L(length(bin_centers):-1:1) - sem_sNPE_L(length(bin_centers):-1:1);
-    
-    r_sem_PPE_F = avg_PPE_F(length(bin_centers):-1:1) - sem_PPE_F(length(bin_centers):-1:1);
-    r_sem_PPE_L = avg_PPE_L(length(bin_centers):-1:1) - sem_PPE_L(length(bin_centers):-1:1);
-    r_sem_NPE_F = avg_NPE_F(length(bin_centers):-1:1) - sem_NPE_F(length(bin_centers):-1:1);
-    r_sem_NPE_L = avg_NPE_L(length(bin_centers):-1:1) - sem_NPE_L(length(bin_centers):-1:1);
-    
-    r_sem_dPPE_D = avg_dPPE_D(length(bin_centers):-1:1) - sem_dPPE_D(length(bin_centers):-1:1);
-    r_sem_sPPE_D = avg_sPPE_D(length(bin_centers):-1:1) - sem_sPPE_D(length(bin_centers):-1:1);
-    r_sem_dNPE_D = avg_dNPE_D(length(bin_centers):-1:1) - sem_dNPE_D(length(bin_centers):-1:1);
-    r_sem_sNPE_D = avg_sNPE_D(length(bin_centers):-1:1) - sem_sNPE_D(length(bin_centers):-1:1);
-    
-    r_sem_PPE_D = avg_PPE_D(length(bin_centers):-1:1) - sem_PPE_D(length(bin_centers):-1:1);
-    r_sem_NPE_D = avg_NPE_D(length(bin_centers):-1:1) - sem_NPE_D(length(bin_centers):-1:1);
-    
-    r_sem_bk2_sh_F = avg_bk2_sh_F(length(bin_centers):-1:1) - sem_bk2_sh_F(length(bin_centers):-1:1);
-    r_sem_bk2_lo_F = avg_bk2_lo_F(length(bin_centers):-1:1) - sem_bk2_lo_F(length(bin_centers):-1:1);
-    r_sem_bk3_bg_F = avg_bk3_bg_F(length(bin_centers):-1:1) - sem_bk3_bg_F(length(bin_centers):-1:1);
-    r_sem_bk3_sm_F = avg_bk3_sm_F(length(bin_centers):-1:1) - sem_bk3_sm_F(length(bin_centers):-1:1);
-    r_sem_bk4_bg_F = avg_bk4_bg_F(length(bin_centers):-1:1) - sem_bk4_bg_F(length(bin_centers):-1:1);
-    r_sem_bk4_sm_F = avg_bk4_sm_F(length(bin_centers):-1:1) - sem_bk4_sm_F(length(bin_centers):-1:1);
-    
-    r_sem_bk2_sh_L = avg_bk2_sh_L(length(bin_centers):-1:1) - sem_bk2_sh_L(length(bin_centers):-1:1);
-    r_sem_bk2_lo_L = avg_bk2_lo_L(length(bin_centers):-1:1) - sem_bk2_lo_L(length(bin_centers):-1:1);
-    r_sem_bk3_bg_L = avg_bk3_bg_L(length(bin_centers):-1:1) - sem_bk3_bg_L(length(bin_centers):-1:1);
-    r_sem_bk3_sm_L = avg_bk3_sm_L(length(bin_centers):-1:1) - sem_bk3_sm_L(length(bin_centers):-1:1);
-    r_sem_bk4_bg_L = avg_bk4_bg_L(length(bin_centers):-1:1) - sem_bk4_bg_L(length(bin_centers):-1:1);
-    r_sem_bk4_sm_L = avg_bk4_sm_L(length(bin_centers):-1:1) - sem_bk4_sm_L(length(bin_centers):-1:1);
-    
-    r_sem_bk2_sh_D = avg_bk2_sh_D(length(bin_centers):-1:1) - sem_bk2_sh_D(length(bin_centers):-1:1);
-    r_sem_bk2_lo_D = avg_bk2_lo_D(length(bin_centers):-1:1) - sem_bk2_lo_D(length(bin_centers):-1:1);
-    r_sem_bk3_bg_D = avg_bk3_bg_D(length(bin_centers):-1:1) - sem_bk3_bg_D(length(bin_centers):-1:1);
-    r_sem_bk3_sm_D = avg_bk3_sm_D(length(bin_centers):-1:1) - sem_bk3_sm_D(length(bin_centers):-1:1);
-    r_sem_bk4_bg_D = avg_bk4_bg_D(length(bin_centers):-1:1) - sem_bk4_bg_D(length(bin_centers):-1:1);
-    r_sem_bk4_sm_D = avg_bk4_sm_D(length(bin_centers):-1:1) - sem_bk4_sm_D(length(bin_centers):-1:1);
+%calcuate adjusted value  = 'grand mean - case mean';
+adj_value_Ctrl_PPE_F = grand_mean_Ctrl_PPE_F - case_mean_Ctrl_PPE_F;
+adj_value_Ctrl_PPE_L = grand_mean_Ctrl_PPE_L - case_mean_Ctrl_PPE_L;
+adj_value_Ctrl_NPE_F = grand_mean_Ctrl_NPE_F - case_mean_Ctrl_NPE_F;
+adj_value_Ctrl_NPE_L = grand_mean_Ctrl_NPE_L - case_mean_Ctrl_NPE_L;
+adj_value_Ctrl_PPE_D = grand_mean_Ctrl_PPE_D - case_mean_Ctrl_PPE_D;
+adj_value_Ctrl_NPE_D = grand_mean_Ctrl_NPE_D - case_mean_Ctrl_NPE_D;
+adj_value_HCx_PPE_F = grand_mean_HCx_PPE_F - case_mean_HCx_PPE_F;
+adj_value_HCx_PPE_L = grand_mean_HCx_PPE_L - case_mean_HCx_PPE_L;
+adj_value_HCx_NPE_F = grand_mean_HCx_NPE_F - case_mean_HCx_NPE_F;
+adj_value_HCx_NPE_L = grand_mean_HCx_NPE_L - case_mean_HCx_NPE_L;
+adj_value_HCx_PPE_D = grand_mean_HCx_PPE_D - case_mean_HCx_PPE_D;
+adj_value_HCx_NPE_D = grand_mean_HCx_NPE_D - case_mean_HCx_NPE_D;
 
-
+%calculate adjusted numbers; actual number + adjusted value
+for a = 1:length(bin_centers);
+    adj_Ctrl_PPE_F(:,a) = Ctrl_PPE_F(:,a) + adj_value_Ctrl_PPE_F;
+    adj_Ctrl_NPE_F(:,a) = Ctrl_NPE_F(:,a) + adj_value_Ctrl_NPE_F;
+    adj_Ctrl_PPE_L(:,a) = Ctrl_PPE_L(:,a) + adj_value_Ctrl_PPE_L;
+    adj_Ctrl_NPE_L(:,a) = Ctrl_NPE_L(:,a) + adj_value_Ctrl_NPE_L;
+    adj_Ctrl_PPE_D(:,a) = Ctrl_PPE_D(:,a) + adj_value_Ctrl_PPE_D;
+    adj_Ctrl_NPE_D(:,a) = Ctrl_NPE_D(:,a) + adj_value_Ctrl_NPE_D;
+    adj_HCx_PPE_F(:,a) = HCx_PPE_F(:,a) + adj_value_HCx_PPE_F;
+    adj_HCx_NPE_F(:,a) = HCx_NPE_F(:,a) + adj_value_HCx_NPE_F;
+    adj_HCx_PPE_L(:,a) = HCx_PPE_L(:,a) + adj_value_HCx_PPE_L;
+    adj_HCx_NPE_L(:,a) = HCx_NPE_L(:,a) + adj_value_HCx_NPE_L;
+    adj_HCx_PPE_D(:,a) = HCx_PPE_D(:,a) + adj_value_HCx_PPE_D;
+    adj_HCx_NPE_D(:,a) = HCx_NPE_D(:,a) + adj_value_HCx_NPE_D;
+end
+    
+%Calculate within subject sem;
+sem_Ctrl_PPE_F = std(adj_Ctrl_PPE_F,1)/sqrt(length(adj_Ctrl_PPE_F(:,1)));
+sem_Ctrl_PPE_L = std(adj_Ctrl_PPE_L,1)/sqrt(length(adj_Ctrl_PPE_L(:,1)));
+sem_Ctrl_NPE_F = std(adj_Ctrl_NPE_F,1)/sqrt(length(adj_Ctrl_NPE_F(:,1)));
+sem_Ctrl_NPE_L = std(adj_Ctrl_NPE_L,1)/sqrt(length(adj_Ctrl_NPE_L(:,1)));
+sem_Ctrl_PPE_D = std(adj_Ctrl_PPE_D,1)/sqrt(length(adj_Ctrl_PPE_D(:,1)));
+sem_Ctrl_NPE_D = std(adj_Ctrl_NPE_D,1)/sqrt(length(adj_Ctrl_NPE_D(:,1)));
+sem_HCx_PPE_F = std(adj_HCx_PPE_F,1)/sqrt(length(adj_HCx_PPE_F(:,1)));
+sem_HCx_PPE_L = std(adj_HCx_PPE_L,1)/sqrt(length(adj_HCx_PPE_L(:,1)));
+sem_HCx_NPE_F = std(adj_HCx_NPE_F,1)/sqrt(length(adj_HCx_NPE_F(:,1)));
+sem_HCx_NPE_L = std(adj_HCx_NPE_L,1)/sqrt(length(adj_HCx_NPE_L(:,1)));
+sem_HCx_PPE_D = std(adj_HCx_PPE_D,1)/sqrt(length(adj_HCx_PPE_D(:,1)));
+sem_HCx_NPE_D = std(adj_HCx_NPE_D,1)/sqrt(length(adj_HCx_NPE_D(:,1)));
+    
+%Calcualte bottom varience with reversal order;
+r_sem_Ctrl_PPE_F = avg_Ctrl_PPE_F(length(bin_centers):-1:1) - sem_Ctrl_PPE_F(length(bin_centers):-1:1);
+r_sem_Ctrl_PPE_L = avg_Ctrl_PPE_L(length(bin_centers):-1:1) - sem_Ctrl_PPE_L(length(bin_centers):-1:1);
+r_sem_Ctrl_NPE_F = avg_Ctrl_NPE_F(length(bin_centers):-1:1) - sem_Ctrl_NPE_F(length(bin_centers):-1:1);
+r_sem_Ctrl_NPE_L = avg_Ctrl_NPE_L(length(bin_centers):-1:1) - sem_Ctrl_NPE_L(length(bin_centers):-1:1);
+r_sem_Ctrl_PPE_D = avg_Ctrl_PPE_D(length(bin_centers):-1:1) - sem_Ctrl_PPE_D(length(bin_centers):-1:1);
+r_sem_Ctrl_NPE_D = avg_Ctrl_NPE_D(length(bin_centers):-1:1) - sem_Ctrl_NPE_D(length(bin_centers):-1:1);
+r_sem_HCx_PPE_F = avg_HCx_PPE_F(length(bin_centers):-1:1) - sem_HCx_PPE_F(length(bin_centers):-1:1);
+r_sem_HCx_PPE_L = avg_HCx_PPE_L(length(bin_centers):-1:1) - sem_HCx_PPE_L(length(bin_centers):-1:1);
+r_sem_HCx_NPE_F = avg_HCx_NPE_F(length(bin_centers):-1:1) - sem_HCx_NPE_F(length(bin_centers):-1:1);
+r_sem_HCx_NPE_L = avg_HCx_NPE_L(length(bin_centers):-1:1) - sem_HCx_NPE_L(length(bin_centers):-1:1);
+r_sem_HCx_PPE_D = avg_HCx_PPE_D(length(bin_centers):-1:1) - sem_HCx_PPE_D(length(bin_centers):-1:1);
+r_sem_HCx_NPE_D = avg_HCx_NPE_D(length(bin_centers):-1:1) - sem_HCx_NPE_D(length(bin_centers):-1:1);
+    
 %for 0 line in diff plots;
 x_line = [-0.5 1.5];
 
@@ -1005,59 +829,141 @@ pre_epoch = find(bin_centers < 0.5);
 epoch = find(bin_centers >= 0.5 & bin_centers <= 1.0); 
 post_epoch = find(bin_centers > 1.0);
 
-%figure 1; PPE;
-figure;
+%figure 1;
+figure1 = figure;
+axes1 = axes('XTick',[0 0.5 1 1.5],'YTick',[-2 0 2 4],'Parent',figure1);
+axis(axes1,[0 1.5 -2 4]);
+hold(axes1,'all');
+
 patch([.5 .5 1 1],[-3 4 4 -3],'k', 'facecolor',[.6 .6 .6],'edgecolor',[1 1 1],'facealpha',0.3,'edgealpha',0.3);
 x = bin_centers;
-d=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_PPE_L + sem_PPE_L r_sem_PPE_L],[0.8 1 1]); hold on;
-e=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_PPE_F + sem_PPE_F r_sem_PPE_F],[0.8 1 1]); hold on;
+d=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_Ctrl_PPE_L + sem_Ctrl_PPE_L r_sem_Ctrl_PPE_L],[0.8 1 1]); hold on;
+e=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_Ctrl_PPE_F + sem_Ctrl_PPE_F r_sem_Ctrl_PPE_F],[0.8 1 1]); hold on;
 set(d,'EdgeColor',[0.8 1 1]);hold on;
 set(e,'EdgeColor',[0.8 1 1]);hold on;
 
-H = plot(bin_centers(pre_epoch),avg_PPE_L(:,pre_epoch),'c','LineWidth',3,'LineStyle','--'); hold on;
-H = plot(bin_centers(pre_epoch),avg_PPE_F(:,pre_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(pre_epoch),avg_Ctrl_PPE_L(:,pre_epoch),'c','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(pre_epoch),avg_Ctrl_PPE_F(:,pre_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
 
-H = plot(bin_centers(epoch),avg_PPE_L(:,epoch),'c','LineWidth',4); hold on;
-H = plot(bin_centers(epoch),avg_PPE_F(:,epoch),'b','LineWidth',4); hold on;
+H = plot(bin_centers(epoch),avg_Ctrl_PPE_L(:,epoch),'c','LineWidth',4); hold on;
+H = plot(bin_centers(epoch),avg_Ctrl_PPE_F(:,epoch),'b','LineWidth',4); hold on;
 
-H = plot(bin_centers(post_epoch),avg_PPE_L(:,post_epoch),'c','LineWidth',3,'LineStyle','--'); hold on;
-H = plot(bin_centers(post_epoch),avg_PPE_F(:,post_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(post_epoch),avg_Ctrl_PPE_L(:,post_epoch),'c','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(post_epoch),avg_Ctrl_PPE_F(:,post_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
 
-%figure 2; NPE;
-figure;
+
+%figure 2;
+figure2 = figure;
+axes1 = axes('XTick',[0 0.5 1 1.5],'YTick',[-2 0 2 4],'Parent',figure2);
+axis(axes1,[0 1.5 -2 4]);
+hold(axes1,'all');
+
 patch([.5 .5 1 1],[-3 4 4 -3],'k', 'facecolor',[.6 .6 .6],'edgecolor',[1 1 1],'facealpha',0.3,'edgealpha',0.3);
 x = bin_centers;
-d=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_NPE_L + sem_NPE_L r_sem_NPE_L],[1 0.8 1]); hold on;
-e=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_NPE_F + sem_NPE_F r_sem_NPE_F],[1 0.8 1]); hold on;
+d=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_HCx_PPE_L + sem_HCx_PPE_L r_sem_HCx_PPE_L],[0.8 1 1]); hold on;
+e=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_HCx_PPE_F + sem_HCx_PPE_F r_sem_HCx_PPE_F],[0.8 1 1]); hold on;
+set(d,'EdgeColor',[0.8 1 1]);hold on;
+set(e,'EdgeColor',[0.8 1 1]);hold on;
+
+H = plot(bin_centers(pre_epoch),avg_HCx_PPE_L(:,pre_epoch),'c','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(pre_epoch),avg_HCx_PPE_F(:,pre_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
+
+H = plot(bin_centers(epoch),avg_HCx_PPE_L(:,epoch),'c','LineWidth',4); hold on;
+H = plot(bin_centers(epoch),avg_HCx_PPE_F(:,epoch),'b','LineWidth',4); hold on;
+
+H = plot(bin_centers(post_epoch),avg_HCx_PPE_L(:,post_epoch),'c','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(post_epoch),avg_HCx_PPE_F(:,post_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
+
+
+%figure 3;
+figure3 = figure;
+axes1 = axes('XTick',[0 0.5 1 1.5],'YTick',[-2 0 2 4],'Parent',figure3);
+axis(axes1,[0 1.5 -2 4]);
+hold(axes1,'all');
+
+patch([.5 .5 1 1],[-3 4 4 -3],'k', 'facecolor',[.6 .6 .6],'edgecolor',[1 1 1],'facealpha',0.3,'edgealpha',0.3);
+x = bin_centers;
+d=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_Ctrl_NPE_L + sem_Ctrl_NPE_L r_sem_Ctrl_NPE_L],[1 0.8 1]); hold on;
+e=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_Ctrl_NPE_F + sem_Ctrl_NPE_F r_sem_Ctrl_NPE_F],[1 0.8 1]); hold on;
 set(d,'EdgeColor',[1 0.8 1]);hold on;
 set(e,'EdgeColor',[1 0.8 1]);hold on;
 
-H = plot(bin_centers(pre_epoch),avg_NPE_L(:,pre_epoch),'m','LineWidth',3,'LineStyle','--'); hold on;
-H = plot(bin_centers(pre_epoch),avg_NPE_F(:,pre_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(pre_epoch),avg_Ctrl_NPE_L(:,pre_epoch),'m','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(pre_epoch),avg_Ctrl_NPE_F(:,pre_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
 
-H = plot(bin_centers(epoch),avg_NPE_L(:,epoch),'m','LineWidth',4); hold on;
-H = plot(bin_centers(epoch),avg_NPE_F(:,epoch),'r','LineWidth',4); hold on;
+H = plot(bin_centers(epoch),avg_Ctrl_NPE_L(:,epoch),'m','LineWidth',4); hold on;
+H = plot(bin_centers(epoch),avg_Ctrl_NPE_F(:,epoch),'r','LineWidth',4); hold on;
 
-H = plot(bin_centers(post_epoch),avg_NPE_L(:,post_epoch),'m','LineWidth',3,'LineStyle','--'); hold on;
-H = plot(bin_centers(post_epoch),avg_NPE_F(:,post_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(post_epoch),avg_Ctrl_NPE_L(:,post_epoch),'m','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(post_epoch),avg_Ctrl_NPE_F(:,post_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
 
-%figure 3;PE diff;
-figure;
+
+%figure 4;
+figure4 = figure;
+axes1 = axes('XTick',[0 0.5 1 1.5],'YTick',[-2 0 2 4],'Parent',figure4);
+axis(axes1,[0 1.5 -2 4]);
+hold(axes1,'all');
+
 patch([.5 .5 1 1],[-3 4 4 -3],'k', 'facecolor',[.6 .6 .6],'edgecolor',[1 1 1],'facealpha',0.3,'edgealpha',0.3);
 x = bin_centers;
-d=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_PPE_D + sem_PPE_D r_sem_PPE_D],[0.8 1 1]); hold on;
-e=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_NPE_D + sem_NPE_D r_sem_NPE_D],[1 0.8 1]); hold on;
+d=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_HCx_NPE_L + sem_HCx_NPE_L r_sem_HCx_NPE_L],[1 0.8 1]); hold on;
+e=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_HCx_NPE_F + sem_HCx_NPE_F r_sem_HCx_NPE_F],[1 0.8 1]); hold on;
+set(d,'EdgeColor',[1 0.8 1]);hold on;
+set(e,'EdgeColor',[1 0.8 1]);hold on;
+
+H = plot(bin_centers(pre_epoch),avg_HCx_NPE_L(:,pre_epoch),'m','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(pre_epoch),avg_HCx_NPE_F(:,pre_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
+
+H = plot(bin_centers(epoch),avg_HCx_NPE_L(:,epoch),'m','LineWidth',4); hold on;
+H = plot(bin_centers(epoch),avg_HCx_NPE_F(:,epoch),'r','LineWidth',4); hold on;
+
+H = plot(bin_centers(post_epoch),avg_HCx_NPE_L(:,post_epoch),'m','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(post_epoch),avg_HCx_NPE_F(:,post_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
+
+
+%figure 5;
+figure5 = figure;
+axes1 = axes('XTick',[0 0.5 1 1.5],'YTick',[-2 0 2 4],'Parent',figure5);
+axis(axes1,[0 1.5 -2 4]);
+hold(axes1,'all');
+
+patch([.5 .5 1 1],[-3 4 4 -3],'k', 'facecolor',[.6 .6 .6],'edgecolor',[1 1 1],'facealpha',0.3,'edgealpha',0.3);
+x = bin_centers;
+d=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_Ctrl_PPE_D + sem_Ctrl_PPE_D r_sem_Ctrl_PPE_D],[0.8 1 1]); hold on;
+e=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_Ctrl_NPE_D + sem_Ctrl_NPE_D r_sem_Ctrl_NPE_D],[1 0.8 1]); hold on;
 set(d,'EdgeColor',[0.8 1 1]);hold on;
 set(e,'EdgeColor',[1 0.8 1]);hold on;
 
-H = plot(bin_centers(pre_epoch),avg_PPE_D(:,pre_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
-H = plot(bin_centers(pre_epoch),avg_NPE_D(:,pre_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(pre_epoch),avg_Ctrl_PPE_D(:,pre_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(pre_epoch),avg_Ctrl_NPE_D(:,pre_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
 
-H = plot(bin_centers(epoch),avg_PPE_D(:,epoch),'b','LineWidth',4); hold on;
-H = plot(bin_centers(epoch),avg_NPE_D(:,epoch),'r','LineWidth',4); hold on;
+H = plot(bin_centers(epoch),avg_Ctrl_PPE_D(:,epoch),'b','LineWidth',4); hold on;
+H = plot(bin_centers(epoch),avg_Ctrl_NPE_D(:,epoch),'r','LineWidth',4); hold on;
 
-H = plot(bin_centers(post_epoch),avg_PPE_D(:,post_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
-H = plot(bin_centers(post_epoch),avg_NPE_D(:,post_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(post_epoch),avg_Ctrl_PPE_D(:,post_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(post_epoch),avg_Ctrl_NPE_D(:,post_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
 plot(x_line,[0 0],'LineStyle','--','Color','k'); hold on;
 
 
+%figure 6;
+figure6 = figure;
+axes1 = axes('XTick',[0 0.5 1 1.5],'YTick',[-2 0 2 4],'Parent',figure6);
+axis(axes1,[0 1.5 -2 4]);
+hold(axes1,'all');
+
+patch([.5 .5 1 1],[-3 4 4 -3],'k', 'facecolor',[.6 .6 .6],'edgecolor',[1 1 1],'facealpha',0.3,'edgealpha',0.3);
+x = bin_centers;
+d=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_HCx_PPE_D + sem_HCx_PPE_D r_sem_HCx_PPE_D],[0.8 1 1]); hold on;
+e=patch([-0.5:bin_size:1.5 1.5:-bin_size:-0.5],[avg_HCx_NPE_D + sem_HCx_NPE_D r_sem_HCx_NPE_D],[1 0.8 1]); hold on;
+set(d,'EdgeColor',[0.8 1 1]);hold on;
+set(e,'EdgeColor',[1 0.8 1]);hold on;
+
+H = plot(bin_centers(pre_epoch),avg_HCx_PPE_D(:,pre_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(pre_epoch),avg_HCx_NPE_D(:,pre_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
+
+H = plot(bin_centers(epoch),avg_HCx_PPE_D(:,epoch),'b','LineWidth',4); hold on;
+H = plot(bin_centers(epoch),avg_HCx_NPE_D(:,epoch),'r','LineWidth',4); hold on;
+
+H = plot(bin_centers(post_epoch),avg_HCx_PPE_D(:,post_epoch),'b','LineWidth',3,'LineStyle','--'); hold on;
+H = plot(bin_centers(post_epoch),avg_HCx_NPE_D(:,post_epoch),'r','LineWidth',3,'LineStyle','--'); hold on;
+plot(x_line,[0 0],'LineStyle','--','Color','k'); hold on;
